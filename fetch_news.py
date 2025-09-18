@@ -1,276 +1,392 @@
 # fetch_news.py
-import os, re, json, time, hashlib
-from datetime import datetime, timedelta
-from urllib.parse import urlparse, urljoin
+# -*- coding: utf-8 -*-
+
+"""
+每日抓取 AI×生物医学 / 微流控 / 生物信息学 的新闻/论文，并输出：
+  public/data/YYYY-MM-DD.json
+  public/data/YYYY-MM-DD.md
+
+主要来源：
+- PubMed（核心）
+- arXiv（医学/生物/影像相关的预印本，可选开启）
+
+改进要点：
+- JST 时区与“近 N 天”过滤（避免 offset-naive 错误）
+- PubMed 文章的封面：优先抓期刊原站的 og:image，退化到站点图标
+"""
+
+from __future__ import annotations
+
+import os
+import re
+import json
+import time
+import hashlib
+import logging
+import datetime as dt
+from dataclasses import dataclass, asdict
+from typing import List, Dict, Any, Optional
+from urllib.parse import urlencode, urljoin, urlparse, quote_plus
 
 import requests
 import feedparser
 from bs4 import BeautifulSoup
-from dateutil import tz
-from datetime import datetime, timedelta
 
-JST = tz.gettz("Asia/Tokyo")
+# ========== 配置 ==========
+JST = dt.timezone(dt.timedelta(hours=9))  # 日本时区
+UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123 Safari/537.36"}
+
 OUT_DIR = "public/data"
-os.makedirs(OUT_DIR, exist_ok=True)
 
-HEADERS = {"User-Agent": "NewsDailyBot/1.0 (+https://example.org)"}
+# 控制抓取规模
+DAYS_LOOKBACK = 3          # 近 N 天（针对 PubMed / arXiv）
+MAX_PER_SECTION = 40       # 每个模块最多条数（避免过长）
+TIMEOUT = 12
 
-SOURCES = {
-    "ai_biomed": [
-        {"type": "arxiv", "q": '(ti:"medical" OR ti:"biomedical" OR abs:"radiology" OR abs:"genomics" OR abs:"cardiac" OR abs:"pathology") AND (cat:cs.AI OR cat:stat.ML OR cat:q-bio.QM OR cat:q-bio.TO)', "max": 30},
-        {"type": "rss", "url": "https://www.biorxiv.org/rss/latest.xml"},
-        {"type": "rss", "url": "https://www.medrxiv.org/rss/latest.xml"},
-        {"type": "pubmed", "q": '(("artificial intelligence"[Title/Abstract]) OR "deep learning"[Title/Abstract]) AND (medical OR clinical OR radiology OR genomics)', "days": 1, "max": 40},
-        {"type": "rss", "url": "https://www.nature.com/subjects/medical-ai.rss"},
-        {"type": "rss", "url": "https://www.nature.com/subjects/radiology-and-imaging.rss"},
-        {"type": "rss", "url": "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=sci"},
-        {"type": "rss", "url": "https://www.nature.com/nm/current_issue.rss"},
-        {"type": "rss", "url": "https://www.nature.com/nbt/current_issue.rss"},
-        {"type": "rss", "url": "https://www.nih.gov/news-events/news-releases/feed"},
-        {"type": "rss", "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml"},
-    ],
-    "microfluidics": [
-        {"type": "rss", "url": "https://pubs.rsc.org/en/journals/journalissues/lc?feed=rss"},
-        {"type": "rss", "url": "https://www.nature.com/subjects/microfluidics.rss"},
-        {"type": "rss", "url": "https://www.nature.com/subjects/organ-on-a-chip.rss"},
-        {"type": "rss", "url": "https://www.nature.com/micronano/current_issue.rss"},
-    ],
-    "bioinfo": [
-        {"type": "arxiv", "q": '(ti:"bioinformatics" OR abs:"single-cell" OR abs:"spatial transcriptomics" OR abs:"multi-omics") AND (cat:q-bio.GN OR cat:q-bio.QM OR cat:cs.LG OR cat:stat.ML)', "max": 30},
-        {"type": "rss", "url": "https://www.biorxiv.org/collection/bioinformatics/rss.xml"},
-        {"type": "rss", "url": "https://academic.oup.com/rss/site_6152/advanceaccess.xml"},
-        {"type": "rss", "url": "https://www.cell.com/cell-systems/current.rss"},
-        {"type": "pubmed", "q": '("bioinformatics"[Title/Abstract] OR "genomics"[Title/Abstract] OR "single-cell"[Title/Abstract] OR "transcriptomics"[Title/Abstract]) AND ("machine learning"[Title/Abstract] OR "deep learning"[Title/Abstract])', "days": 1, "max": 40},
-    ],
-}
+# 是否启用 arXiv 作为补充
+ENABLE_ARXIV = True
 
-KEYWORDS = {
-    "ai_biomed": {
-        "Cardiac MRI":["cardiac","ventricle","lv","rv","mri","cine"],
-        "Radiology":["ct","x-ray","radiology","segmentation","detection","lesion"],
-        "Genomics":["genome","genomic","variant","gwas","snv","sv","rna-seq"],
-        "Clinical AI":["trial","prospective","external validation","auc","auroc","aupr"],
-    },
-    "microfluidics": {
-        "AST":["antibiotic","susceptibility","MIC","AST"],
-        "Organ-on-chip":["organ-on-chip","organ on a chip","OoC"],
-        "Valves/Flow":["valve","flow","droplet","channel","mixing","PDMS"],
-        "Fabrication":["photolithography","soft lithography","3D print"],
-    },
-    "bioinfo": {
-        "Single-cell":["single-cell","scRNA","cell atlas","metacell"],
-        "Spatial":["spatial","Slide-seq","Visium","MERFISH"],
-        "Multimodal":["multi-omics","ATAC","ChIP","proteomics"],
-        "Algorithms":["transformer","gnn","contrastive","foundation model"],
-    }
-}
 
-def sha(s): return hashlib.sha256(s.encode("utf-8")).hexdigest()[:16]
-def norm_host(url):
-    try: return urlparse(url).netloc
-    except: return ""
-def to_iso(dt):
-    if isinstance(dt, datetime):
-        return dt.astimezone(JST).strftime("%Y-%m-%d")
-    return dt
+# ========== 数据模型 ==========
+@dataclass
+class Item:
+    id: str
+    title: str
+    summary: str
+    url: str
+    cover: str
+    source: str
+    time: str   # YYYY-MM-DD
+    tags: List[str]
 
-def fetch_og_image(url):
+
+# ========== 通用工具 ==========
+def today_jst_str() -> str:
+    return dt.datetime.now(JST).strftime("%Y-%m-%d")
+
+
+def iso_date(s: str) -> str:
+    """把各种日期字符串尽量规范到 YYYY-MM-DD"""
     try:
-        html = requests.get(url, timeout=12, headers=HEADERS).text
-        soup = BeautifulSoup(html, "html.parser")
-        for prop in ["og:image","twitter:image","og:image:url"]:
-            tag = soup.find("meta", property=prop) or soup.find("meta", attrs={"name":prop})
-            if tag and tag.get("content"):
-                return urljoin(url, tag["content"])
-        icon = soup.find("link", rel=lambda v: v and "icon" in v.lower())
-        if icon and icon.get("href"): return urljoin(url, icon["href"])
+        return dt.date.fromisoformat(s[:10]).isoformat()
     except Exception:
-        pass
+        # 尝试常见格式
+        m = re.search(r"(\d{4})[-/\.](\d{1,2})[-/\.](\d{1,2})", s)
+        if m:
+            y, mo, d = map(int, m.groups())
+            return dt.date(y, mo, d).isoformat()
+        return s[:10]
+
+
+def within_days(date_str: str, days: int) -> bool:
+    """判断 date_str 是否在近 N 天（JST）"""
+    try:
+        d = dt.date.fromisoformat(date_str[:10])
+    except Exception:
+        return True  # 解析失败就保留
+    today = dt.datetime.now(JST).date()
+    return (today - d).days <= max(days, 0)
+
+
+def md5(s: str) -> str:
+    return hashlib.md5(s.encode("utf-8", "ignore")).hexdigest()[:16]
+
+
+def safe_get(url: str, **kwargs) -> Optional[requests.Response]:
+    try:
+        r = requests.get(url, headers=UA, timeout=kwargs.get("timeout", TIMEOUT), allow_redirects=True)
+        r.raise_for_status()
+        return r
+    except Exception:
+        return None
+
+
+# ========== 封面抓取（期刊原站优先） ==========
+def get_og_image(url: str) -> Optional[str]:
+    """优先取 og:image / twitter:image；拿不到用站点图标兜底"""
+    r = safe_get(url)
+    if r is None:
+        return None
+    soup = BeautifulSoup(r.text, "lxml")
+    for selector in ("meta[property='og:image']", "meta[name='twitter:image']"):
+        tag = soup.select_one(selector)
+        if tag and tag.get("content"):
+            return urljoin(r.url, tag["content"].strip())
+    # 兜底：站点图标（至少每家期刊不一样）
+    try:
+        host = urlparse(r.url).netloc
+        return f"https://www.google.com/s2/favicons?sz=256&domain={host}"
+    except Exception:
+        return None
+
+
+def best_cover_for(url: str) -> Optional[str]:
+    """如果是 PubMed，先到 Full text links 找期刊原站；否则直接取当前页 og:image。"""
+    host = urlparse(url).netloc.lower()
+    if "pubmed.ncbi.nlm.nih.gov" in host:
+        # 1) 找 PubMed 页面里的 Full text links
+        r = safe_get(url)
+        if r is not None:
+            soup = BeautifulSoup(r.text, "lxml")
+            a = soup.select_one("section.full-text-links a[href]")
+            if a and a.get("href"):
+                fulltext = urljoin(r.url, a["href"])
+                img = get_og_image(fulltext)
+                if img:
+                    return img
+        # 2) 回退：PubMed 页面的 og:image（通常是蓝色 NIH 图）
+        img = get_og_image(url)
+        if img:
+            return img
+        return None
+    else:
+        return get_og_image(url)
+
+
+def clean_abs(txt: str, limit: int = 800) -> str:
+    if not txt:
+        return ""
+    t = re.sub(r"\s+", " ", txt).strip()
+    return t if len(t) <= limit else (t[:limit].rstrip() + "…")
+
+
+# ========== PubMed 抓取 ==========
+def search_pubmed(query: str, retmax: int = 50) -> List[str]:
+    """用 E-utilities esearch 抓到 PMID 列表"""
+    params = {
+        "db": "pubmed",
+        "term": query,
+        "retmode": "json",
+        "retmax": str(retmax),
+        "sort": "most+recent",
+    }
+    url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?{urlencode(params)}"
+    r = safe_get(url)
+    if r is None:
+        return []
+    try:
+        js = r.json()
+        return js.get("esearchresult", {}).get("idlist", [])
+    except Exception:
+        return []
+
+
+def fetch_pubmed_summaries(pmids: List[str]) -> List[Dict[str, Any]]:
+    """用 esummary 抓取题目、来源、时间；再配合网页取摘要"""
+    if not pmids:
+        return []
+    params = {
+        "db": "pubmed",
+        "id": ",".join(pmids),
+        "retmode": "json",
+    }
+    url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?{urlencode(params)}"
+    r = safe_get(url)
+    if r is None:
+        return []
+    try:
+        js = r.json()
+        res = []
+        for k, v in js.get("result", {}).items():
+            if k == "uids":
+                continue
+            title = v.get("title") or ""
+            journal = v.get("fulljournalname") or v.get("source") or ""
+            date = v.get("pubdate") or v.get("epubdate") or v.get("sortpubdate") or ""
+            date_iso = iso_date(date) if date else today_jst_str()
+            url_pub = f"https://pubmed.ncbi.nlm.nih.gov/{k}/"
+            res.append({
+                "pmid": k,
+                "title": title.strip(),
+                "source": journal.strip(),
+                "time": date_iso,
+                "url": url_pub
+            })
+        return res
+    except Exception:
+        return []
+
+
+def fetch_pubmed_abstract(url_pubmed: str) -> str:
+    """从 PubMed 网页抓 Abstract 文本"""
+    r = safe_get(url_pubmed)
+    if r is None:
+        return ""
+    soup = BeautifulSoup(r.text, "lxml")
+    abs_div = soup.select_one("div.abstract-content")
+    if abs_div:
+        return clean_abs(abs_div.get_text(" ", strip=True))
+    # 某些条目用不同结构
+    abs2 = soup.select_one("div#abstract")
+    if abs2:
+        return clean_abs(abs2.get_text(" ", strip=True))
     return ""
 
-def fetch_rss(url, cap=80):
-    feed = feedparser.parse(url)
-    items = []
-    for e in feed.entries[:cap]:
-        link = e.get("link") or ""
-        title = (e.get("title") or "").strip()
-        summary_html = e.get("summary", "") or e.get("description", "") or ""
-        summary = BeautifulSoup(summary_html, "html.parser").get_text().strip()
-        # time
-        dt = None
-        for k in ("published_parsed","updated_parsed"):
-            if e.get(k):
-                dt = datetime.fromtimestamp(time.mktime(e[k]), tz=tz.tzutc()).astimezone(JST)
-                break
-        cover = ""
-        if "media_content" in e and e.media_content:
-            cover = e.media_content[0].get("url","")
-        if not cover:
-            cover = fetch_og_image(link)
-        items.append({
-            "id": sha(link or title),
-            "title": title,
-            "summary": summary[:600],
-            "url": link,
-            "cover": cover,
-            "source": norm_host(link) or "RSS",
-            "time": to_iso(dt or datetime.now(JST)),
-            "tags": [],
-        })
+
+def build_pubmed_items(query: str, days: int, limit: int, extra_tags: List[str]|None=None) -> List[Item]:
+    pmids = search_pubmed(query, retmax=min(100, limit*2))
+    summaries = fetch_pubmed_summaries(pmids)
+    items: List[Item] = []
+    for s in summaries:
+        if not within_days(s["time"], days):
+            continue
+        abstract = fetch_pubmed_abstract(s["url"])  # 逐条抓摘要（最稳）
+        cover = best_cover_for(s["url"]) or ""
+        tags = ["Peer-reviewed"]
+        if extra_tags:
+            tags.extend(extra_tags)
+        it = Item(
+            id=md5(s["url"]),
+            title=s["title"],
+            summary=abstract,
+            url=s["url"],
+            cover=cover,
+            source=s["source"],
+            time=s["time"],
+            tags=tags
+        )
+        items.append(it)
+        if len(items) >= limit:
+            break
     return items
 
-def fetch_arxiv(q, max_results=30):
-    api = "http://export.arxiv.org/api/query"
-    params = {"search_query": q, "start":0, "max_results":max_results, "sortBy":"submittedDate", "sortOrder":"descending"}
-    r = requests.get(api, params=params, timeout=15, headers=HEADERS)
-    feed = feedparser.parse(r.text)
-    out=[]
-    for e in feed.entries:
-        link = e.get("id") or (e.links[0].href if e.get("links") else "")
-        title = e.get("title","").replace("\n"," ").strip()
-        summary = e.get("summary","").replace("\n"," ").strip()
-        dt = e.get("published_parsed") or e.get("updated_parsed")
-        dt = datetime.fromtimestamp(time.mktime(dt), tz=tz.tzutc()).astimezone(JST) if dt else datetime.now(JST)
-        cover = fetch_og_image(link)
-        out.append({
-            "id": sha(link),
-            "title": title,
-            "summary": summary[:600],
-            "url": link,
-            "cover": cover,
-            "source": "arXiv",
-            "time": to_iso(dt),
-            "tags": ["Preprint"],
-        })
-    return out
 
-def fetch_pubmed(q, days=1, max_n=40):
-    base = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
-    today = datetime.now(JST).date()
-    mindate = (today - timedelta(days=days)).strftime("%Y/%m/%d")
-    maxdate = today.strftime("%Y/%m/%d")
-    esearch = requests.get(base+"esearch.fcgi", params={
-        "db":"pubmed","term":q,"retmode":"json","datetype":"pdat","mindate":mindate,"maxdate":maxdate,"retmax":max_n
-    }, timeout=15, headers=HEADERS).json()
-    ids = esearch.get("esearchresult",{}).get("idlist",[])
-    if not ids: return []
-    efetch = requests.get(base+"efetch.fcgi", params={"db":"pubmed","id":",".join(ids),"retmode":"xml"}, timeout=20, headers=HEADERS).text
-    soup = BeautifulSoup(efetch, "lxml-xml")
-    out=[]
-    for art in soup.find_all("PubmedArticle"):
-        pmid = art.find("PMID").text if art.find("PMID") else ""
-        title = (art.find("ArticleTitle").text or "").strip()
-        abstr = " ".join([x.text for x in art.find_all("AbstractText")])[:600]
-        y = art.find("PubDate").find("Year")
-        m = art.find("PubDate").find("Month")
-        d = art.find("PubDate").find("Day")
-        try:
-            pubdate = datetime(int(y.text), int(m.text) if m else 1, int(d.text) if d else 1, tzinfo=JST)
-        except Exception:
-            pubdate = datetime.now(JST)
-        url = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
-        cover = fetch_og_image(url)
-        journal = art.find("Title").text if art.find("Title") else "PubMed"
-        out.append({
-            "id": sha(pmid),
-            "title": title,
-            "summary": abstr,
-            "url": url,
-            "cover": cover,
-            "source": journal,
-            "time": to_iso(pubdate),
-            "tags": ["Peer-reviewed"],
-        })
-    return out
-
-def tag_item(cat, item):
-    text = f"{item['title']} {item['summary']}".lower()
-    tags = set(item.get("tags",[]))
-    for label, kws in KEYWORDS.get(cat,{}).items():
-        if any(k.lower() in text for k in kws):
-            tags.add(label)
-    host = norm_host(item["url"])
-    if "arxiv.org" in host: tags.add("Preprint")
-    if any(x in host for x in ["nature.com","cell.com","science.org","oup.com"]): tags.add("Journal")
-    item["tags"] = sorted(tags) if tags else []
-    return item
-
-def within_days(dt, days=3):
+# ========== arXiv 抓取（可选） ==========
+def fetch_arxiv(query: str, days: int, limit: int, extra_tags: List[str]|None=None) -> List[Item]:
     """
-    统一按“日期”比较，避免 offset-naive/aware 冲突。
-    支持传入 datetime 或 "YYYY-MM-DD" 字符串。
+    使用 arXiv API。注意 arXiv 时间是 UTC，近 N 天按 JST 也没问题。
     """
-    now_d = datetime.now(JST).date()
-    if isinstance(dt, datetime):
-        d = dt.date()
-    elif isinstance(dt, str):
-        try:
-            d = datetime.fromisoformat(dt).date()  # "YYYY-MM-DD" -> date
-        except Exception:
-            return True
-    else:
-        return True
-    return (now_d - d) <= timedelta(days=days+1)
+    base = "http://export.arxiv.org/api/query"
+    params = {
+        "search_query": query,
+        "sortBy": "submittedDate",
+        "sortOrder": "descending",
+        "max_results": str(limit*2),
+    }
+    url = f"{base}?{urlencode(params)}"
+    d = feedparser.parse(url)
+    items: List[Item] = []
+    for e in d.entries:
+        # 标题/摘要
+        title = re.sub(r"\s+", " ", e.title).strip()
+        summary = clean_abs(e.summary)
+        # 链接（取外链 pdf/html）
+        link = ""
+        for l in e.links:
+            if l.get("type") in ("text/html", "application/pdf"):
+                link = l.get("href")
+                break
+        link = link or e.link
+        # 时间
+        published = e.get("published") or e.get("updated") or ""
+        date_iso = iso_date(published) if published else today_jst_str()
+        if not within_days(date_iso, days):
+            continue
+        tags = ["Preprint"]
+        if extra_tags:
+            tags.extend(extra_tags)
+        host = urlparse(link).netloc
+        cover = f"https://www.google.com/s2/favicons?sz=256&domain={host}"
+        items.append(Item(
+            id=md5(link),
+            title=title,
+            summary=summary,
+            url=link,
+            cover=cover,
+            source="arXiv",
+            time=date_iso,
+            tags=tags
+        ))
+        if len(items) >= limit:
+            break
+    return items
 
-def to_markdown(payload):
-    lines = [f"## {payload['date']} · 每日新闻（AI×生物医学｜微流控｜生物信息学）",""]
-    for label,key in [["AI（生物医学）","ai_biomed"],["微流控","microfluidics"],["生物信息学","bioinfo"]]:
-        arr = payload["items"].get(key,[])
-        if not arr: continue
-        lines.append(f"### {label}")
-        for it in arr:
-            t = it.get("time","")
-            src = it.get("source","")
-            lines.append(f"- **{it['title']}**（{t}） · *{src}*\n  {it.get('summary','')}\n  链接：{it['url']}")
-        lines.append("")
-    return "\n".join(lines)
 
-def main():
-    today_jst = datetime.now(JST).strftime("%Y-%m-%d")
-    out = {"date": today_jst, "items": {"ai_biomed": [], "microfluidics": [], "bioinfo": []}}
+# ========== 去重 ==========
+def dedupe(items: List[Item]) -> List[Item]:
     seen = set()
+    out = []
+    for it in items:
+        key = (it.title.lower(), it.source.lower())
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(it)
+    return out
 
-    for cat, jobs in SOURCES.items():
-        bucket = []
-        for job in jobs:
-            try:
-                if job["type"] == "rss":
-                    bucket += fetch_rss(job["url"])
-                elif job["type"] == "arxiv":
-                    bucket += fetch_arxiv(job["q"], job.get("max",30))
-                elif job["type"] == "pubmed":
-                    bucket += fetch_pubmed(job["q"], job.get("days",1), job.get("max",40))
-            except Exception as e:
-                print(f"[WARN] {cat} source error: {job} -> {e}")
 
-        deduped = []
-        for it in bucket:
-            key = it["url"].split("?")[0]
-            if key in seen: continue
-            seen.add(key)
-            deduped.append(tag_item(cat, it))
+# ========== Markdown ==========
+def to_markdown(date_str: str, bucket: Dict[str, List[Item]]) -> str:
+    def mk(sec_name: str, arr: List[Item]) -> str:
+        if not arr:
+            return f"### {sec_name}\n\n（今日暂无）\n\n"
+        lines = [f"### {sec_name}\n"]
+        for it in arr:
+            tags = ", ".join(it.tags) if it.tags else ""
+            lines.append(f"- **[{it.title}]({it.url})**  \n  来源：{it.source} · 发布：{it.time}  \n  标签：{tags}\n  \n  {it.summary}\n")
+        return "\n".join(lines) + "\n"
 
-        def parse_time(s):
-            """把字符串安全转成带 JST 的 datetime（用于排序等场景）"""
-            try:
-                dt = datetime.fromisoformat(s)  # 可能是 naive
-            except Exception:
-                dt = datetime.now(JST)
-            if dt.tzinfo is None:
-                dt = dt.replace(tzinfo=JST)
-            return dt
-        deduped = [x for x in deduped if within_days(parse_time(x["time"]), days=3)]
-        deduped.sort(key=lambda x: x["time"], reverse=True)
-        out["items"][cat] = deduped
+    total = sum(len(v) for v in bucket.values())
+    head = f"# 每日新闻（JST） · {date_str}\n\n共 {total} 条\n\n"
+    md = head
+    md += mk("AI（生物医学）", bucket["ai_biomed"])
+    md += mk("微流控", bucket["microfluidics"])
+    md += mk("生物信息学", bucket["bioinfo"])
+    return md
 
-    fp = os.path.join(OUT_DIR, f"{today_jst}.json")
-    with open(fp, "w", encoding="utf-8") as f:
-        json.dump(out, f, ensure_ascii=False, indent=2)
-    print(f"[OK] wrote {fp} with counts:", {k: len(v) for k,v in out["items"].items()})
 
-    md = to_markdown(out)
-    with open(os.path.join(OUT_DIR, f"{today_jst}.md"), "w", encoding="utf-8") as f:
-        f.write(md)
+# ========== 主流程 ==========
+def main():
+    os.makedirs(OUT_DIR, exist_ok=True)
+    date_str = today_jst_str()
+
+    # --- 三个模块的查询表达式（PubMed 高级语法）
+    q_ai = '(("artificial intelligence"[Title/Abstract]) OR "deep learning"[Title/Abstract] OR "machine learning"[Title/Abstract]) AND (medical OR clinical OR radiology OR genomics OR bioinformatics)'
+    q_micro = '(microfluidic OR "lab-on-a-chip" OR microdroplet) AND (biomedical OR diagnostic OR assay)'
+    q_bioinfo = '(bioinformatics OR "single-cell" OR genomics OR transcriptomics OR proteomics) AND (algorithm OR pipeline OR method OR benchmark)'
+
+    # --- PubMed 主抓
+    ai_pub = build_pubmed_items(q_ai, DAYS_LOOKBACK, MAX_PER_SECTION, extra_tags=["Radiology"])
+    micro_pub = build_pubmed_items(q_micro, DAYS_LOOKBACK, max(15, MAX_PER_SECTION//2), extra_tags=["AST"])
+    bio_pub = build_pubmed_items(q_bioinfo, DAYS_LOOKBACK, max(20, MAX_PER_SECTION//2), extra_tags=["Single-cell"])
+
+    # --- arXiv 补充（可选）
+    ai_arxiv = []
+    bio_arxiv = []
+    if ENABLE_ARXIV:
+        ai_arxiv = fetch_arxiv(query='(ti:"medical" OR abs:"medical" OR ti:"radiology" OR abs:"radiology" OR ti:"biomedical" OR abs:"biomedical") AND (cat:cs.CV OR cat:cs.LG OR cat:eess.IV)', days=DAYS_LOOKBACK, limit=15, extra_tags=["Preprint"])
+        bio_arxiv = fetch_arxiv(query='(ti:"genomics" OR abs:"genomics" OR ti:"bioinformatics" OR abs:"bioinformatics" OR ti:"single-cell" OR abs:"single-cell") AND (cat:q-bio.GN OR cat:q-bio.QM OR cat:cs.LG)', days=DAYS_LOOKBACK, limit=10, extra_tags=["Preprint"])
+
+    ai_all = dedupe(ai_pub + ai_arxiv)[:MAX_PER_SECTION]
+    micro_all = dedupe(micro_pub)[:max(12, MAX_PER_SECTION//2)]
+    bio_all = dedupe(bio_pub + bio_arxiv)[:MAX_PER_SECTION]
+
+    # --- 打包 JSON
+    payload = {
+        "date": date_str,
+        "items": {
+            "ai_biomed": [asdict(x) for x in ai_all],
+            "microfluidics": [asdict(x) for x in micro_all],
+            "bioinfo": [asdict(x) for x in bio_all],
+        }
+    }
+
+    # --- 写文件
+    json_path = os.path.join(OUT_DIR, f"{date_str}.json")
+    md_path = os.path.join(OUT_DIR, f"{date_str}.md")
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    with open(md_path, "w", encoding="utf-8") as f:
+        f.write(to_markdown(date_str, {
+            "ai_biomed": ai_all,
+            "microfluidics": micro_all,
+            "bioinfo": bio_all
+        }))
+
+    print(f"[OK] wrote: {json_path}  and  {md_path}")
+    print(f"Counts -> AI: {len(ai_all)} | Micro: {len(micro_all)} | Bioinfo: {len(bio_all)}")
+
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
     main()
