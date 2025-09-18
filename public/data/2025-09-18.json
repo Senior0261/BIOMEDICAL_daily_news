@@ -3,1004 +3,1125 @@
   "items": {
     "ai_biomed": [
       {
-        "id": "06c2dfd3c21ce0cb",
+        "id": "526f62ef7eb9be1d",
+        "title": "Supervised machine learning for classification and prediction of stunting among under-five Egyptian children.",
+        "summary": "No abstract available Keywords: DHS; Egypt; Machine learning; Malnutrition; Prediction; Public health; Stunting; Supervised classifiers; Under-five children.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40963124/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "BMC pediatrics",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "2faa70d0daf12ff9",
         "title": "A comprehensive benchmarking of adaptive sampling tools for nanopore sequencing.",
-        "summary": "Adaptive sampling is an emerging technology to enrich target reads while depleting unwanted reads during real-time nanopore sequencing. The application of different algorithms has spawned various tools for the determination of read rejection. However, an evaluation in conjunction with identifying the optimal enrichment performance for a specific task has yet to be conducted. This study aimed to evaluate the performance of six widely used tools for nanopore adaptive sampling. Three distinct types of tasks were selected for testing, including the intraspecies enrichment of COSMIC genes, the inte",
+        "summary": "Background: Adaptive sampling is an emerging technology to enrich target reads while depleting unwanted reads during real-time nanopore sequencing. The application of different algorithms has spawned various tools for the determination of read rejection. However, an evaluation in conjunction with identifying the optimal enrichment performance for a specific task has yet to be conducted. Results: This study aimed to evaluate the performance of six widely used tools for nanopore adaptive sampling. Three distinct types of tasks were selected for testing, including the intraspecies enrichment of COSMIC genes, the interspecies enrichment of Saccharomyces cerevisiae, and the depletion of human host DNA. All the tools show increases in coverage depths of targets varying from 1.50- to 4.86-fold. T…",
         "url": "https://pubmed.ncbi.nlm.nih.gov/40963107/",
         "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
         "source": "Genome biology",
-        "time": "2025-09-18",
+        "time": "2025 Sep 1",
         "tags": [
           "Peer-reviewed",
           "Radiology"
         ]
       },
       {
-        "id": "1f591c1f44e7831e",
+        "id": "f2596469e5d1b825",
         "title": "Causal Transformer for Learning Embeddings from Structured Medical History Records and Multi-Source Data Integration for Complex Disease Risk Prediction.",
-        "summary": "Traditional disease risk prediction models predominantly rely on statistical algorithms and often focus on genetic factors or a limited set of lifestyle factors to estimate the risk of disease onset. Recently, more comprehensive approaches have emerged that integrate genetic factors with additional lifestyle factors (e.g., alcohol intake) and physical features (e.g., body mass index, age) to increase predictive accuracy. Since the onset of complex diseases is often accompanied by the occurrence of comorbidities, incorporating medical history records is a critical yet underexplored avenue for i",
+        "summary": "Traditional disease risk prediction models predominantly rely on statistical algorithms and often focus on genetic factors or a limited set of lifestyle factors to estimate the risk of disease onset. Recently, more comprehensive approaches have emerged that integrate genetic factors with additional lifestyle factors (e.g., alcohol intake) and physical features (e.g., body mass index, age) to increase predictive accuracy. Since the onset of complex diseases is often accompanied by the occurrence of comorbidities, incorporating medical history records is a critical yet underexplored avenue for improving risk prediction. In this study, we propose a novel framework, MIDRP (Multi-source Integration for Disease Risk Prediction), which incorporates genetic variants, lifestyle factors, physical at…",
         "url": "https://pubmed.ncbi.nlm.nih.gov/40963070/",
         "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
         "source": "Interdisciplinary sciences, computational life sciences",
-        "time": "2025-09-18",
+        "time": "2025 Sep 1",
         "tags": [
           "Peer-reviewed",
           "Radiology"
         ]
       },
       {
-        "id": "483f73f50da68162",
+        "id": "834e6659c558b141",
         "title": "ORMCKB: A Knowledge Database for Personalized Medicine in Deciphering the Oral Microbiome-Disease Axis.",
-        "summary": "The oral microbiome plays a crucial role in the development and progression of diseases. The complex interactions between the oral microbiome and diseases are challenging for clinicians in clinical decision-making and scientific research. To address this gap, we developed an oral microbiome knowledge database (ORMCKB), to provide evidence for personalized medicine and scientific research in the oral microbiome-disease axis. The current version of ORMCKB contains 11,554 data entries, encompassing 6941 oral microbe taxonomies, 234 diseases, 220 interventions, and 175 bacteriostats extracted from",
+        "summary": "The oral microbiome plays a crucial role in the development and progression of diseases. The complex interactions between the oral microbiome and diseases are challenging for clinicians in clinical decision-making and scientific research. To address this gap, we developed an oral microbiome knowledge database (ORMCKB), to provide evidence for personalized medicine and scientific research in the oral microbiome-disease axis. The current version of ORMCKB contains 11,554 data entries, encompassing 6941 oral microbe taxonomies, 234 diseases, 220 interventions, and 175 bacteriostats extracted from 818 publications. Compared to ChatGPT-4o, ORMCKB demonstrates superior performance in matching questions with responses (10 vs. 9.6), presenting research article details (10 vs. 5.80), and recommende…",
         "url": "https://pubmed.ncbi.nlm.nih.gov/40963069/",
         "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
         "source": "Interdisciplinary sciences, computational life sciences",
-        "time": "2025-09-18",
+        "time": "2025 Sep 1",
         "tags": [
-          "Cardiac MRI",
           "Peer-reviewed",
           "Radiology"
         ]
       },
       {
-        "id": "90fd58c11b7e1a23",
+        "id": "b9132e188ad28c3e",
         "title": "Egocentric video analysis for automated assessment of open surgical skills via deep learning.",
-        "summary": "While significant progress has been made in skill assessment for minimally invasive procedures, objective evaluation methods for open surgery remain limited. This paper presents a deep learning framework for assessing technical surgical skills using egocentric video data from open surgery training. Our dataset includes 201 videos and corresponding hand kinematics data from three fundamental training task-knot tying (KT), continuous suturing (CS), and interrupted suturing (IS)-performed by 20 participants. Each video was annotated by two experts using a modified OSATS scale (KT: five criteria, ",
+        "summary": "Purpose: While significant progress has been made in skill assessment for minimally invasive procedures, objective evaluation methods for open surgery remain limited. This paper presents a deep learning framework for assessing technical surgical skills using egocentric video data from open surgery training. Methods: Our dataset includes 201 videos and corresponding hand kinematics data from three fundamental training task-knot tying (KT), continuous suturing (CS), and interrupted suturing (IS)-performed by 20 participants. Each video was annotated by two experts using a modified OSATS scale (KT: five criteria, total score range: 5-25; CS/IS: seven criteria, total score range: 7-35). We evaluate three temporal architectures (LSTM, TCN, and Transformer), each using ResNet50 as the backbone f…",
         "url": "https://pubmed.ncbi.nlm.nih.gov/40963049/",
         "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
         "source": "International journal of computer assisted radiology and surgery",
-        "time": "2025-09-18",
+        "time": "2025 Sep 1",
         "tags": [
           "Peer-reviewed",
           "Radiology"
         ]
       },
       {
-        "id": "bec42369bfdb06cd",
+        "id": "847e7c05b7d74e23",
         "title": "Decision Strategies in AI-Based Ensemble Models in Opportunistic Alzheimer's Detection from Structural MRI.",
-        "summary": "Alzheimer's disease (AD) is a neurodegenerative condition and the most common form of dementia. Recent developments in AD treatment call for robust diagnostic tools to facilitate medical decision-making. Despite progress for early diagnostic tests, there remains uncertainty about clinical use. Structural magnetic resonance imaging (MRI), as a readily available imaging tool in the current AD diagnostic pathway, in combination with artificial intelligence, offers opportunities of added value beyond symptomatic evaluation. However, MRI studies in AD tend to suffer from small datasets and conseque",
+        "summary": "Alzheimer's disease (AD) is a neurodegenerative condition and the most common form of dementia. Recent developments in AD treatment call for robust diagnostic tools to facilitate medical decision-making. Despite progress for early diagnostic tests, there remains uncertainty about clinical use. Structural magnetic resonance imaging (MRI), as a readily available imaging tool in the current AD diagnostic pathway, in combination with artificial intelligence, offers opportunities of added value beyond symptomatic evaluation. However, MRI studies in AD tend to suffer from small datasets and consequently limited generalizability. Although ensemble models take advantage of the strengths of several models to improve performance and generalizability, there is little knowledge of how the different en…",
         "url": "https://pubmed.ncbi.nlm.nih.gov/40963032/",
         "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
         "source": "Journal of imaging informatics in medicine",
-        "time": "2025-09-18",
+        "time": "2025 Sep 1",
         "tags": [
-          "Cardiac MRI",
           "Peer-reviewed",
           "Radiology"
         ]
       },
       {
-        "id": "a91c486958690ae4",
+        "id": "efcdc3ff1665aefb",
+        "title": "Video Transformer for Segmentation of Echocardiography Images in Myocardial Strain Measurement.",
+        "summary": "The adoption of left ventricular global longitudinal strain (LVGLS) is still restricted by variability among various vendors and observers, despite advancements from tissue Doppler to speckle tracking imaging, machine learning, and, more recently, convolutional neural network (CNN)-based segmentation strain analysis. While CNNs have enabled fully automated strain measurement, they are inherently constrained by restricted receptive fields and a lack of temporal consistency. Transformer-based networks have emerged as a powerful alternative in medical imaging, offering enhanced global attention. Among these, the Video Swin Transformer (V-SwinT) architecture, with its 3D-shifted windows and locality inductive bias, is particularly well suited for ultrasound imaging, providing temporal consiste…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40963031/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Journal of imaging informatics in medicine",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "3ab7d34f46811bdf",
         "title": "Transitions in dynamical regime and neural mode during perceptual decisions.",
-        "summary": "Perceptual decision-making is thought to be mediated by neuronal networks with attractor dynamics1,2. However, the dynamics underlying the complex neuronal responses during decision-making remain unclear. Here we use simultaneous recordings of hundreds of neurons, combined with an unsupervised, deep-learning-based method, to discover decision-related neural dynamics in the rat frontal cortex and striatum as animals accumulate pulsatile auditory evidence. We found that trajectories evolved along two sequential regimes: an initial phase dominated by sensory inputs, followed by a phase dominated ",
+        "summary": "Perceptual decision-making is thought to be mediated by neuronal networks with attractor dynamics 1,2 . However, the dynamics underlying the complex neuronal responses during decision-making remain unclear. Here we use simultaneous recordings of hundreds of neurons, combined with an unsupervised, deep-learning-based method, to discover decision-related neural dynamics in the rat frontal cortex and striatum as animals accumulate pulsatile auditory evidence. We found that trajectories evolved along two sequential regimes: an initial phase dominated by sensory inputs, followed by a phase dominated by autonomous dynamics, with the flow direction (that is, neural mode) largely orthogonal to that in the first regime. We propose that this transition marks the moment of decision commitment, that i…",
         "url": "https://pubmed.ncbi.nlm.nih.gov/40963029/",
         "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
         "source": "Nature",
-        "time": "2025-09-18",
+        "time": "2025 Sep 1",
         "tags": [
-          "Cardiac MRI",
           "Peer-reviewed",
           "Radiology"
         ]
       },
       {
-        "id": "6ed097b83934f908",
+        "id": "3a91db3129fba04a",
         "title": "Learning the natural history of human disease with generative transformers.",
-        "summary": "Decision-making in healthcare relies on understanding patients' past and current health states to predict and, ultimately, change their future course1-3. Artificial intelligence (AI) methods promise to aid this task by learning patterns of disease progression from large corpora of health records4,5. However, their potential has not been fully investigated at scale. Here we modify the GPT6 (generative pretrained transformer) architecture to model the progression and competing nature of human diseases. We train this model, Delphi-2M, on data from 0.4 million UK Biobank participants and validate ",
+        "summary": "Decision-making in healthcare relies on understanding patients' past and current health states to predict and, ultimately, change their future course 1-3 . Artificial intelligence (AI) methods promise to aid this task by learning patterns of disease progression from large corpora of health records 4,5 . However, their potential has not been fully investigated at scale. Here we modify the GPT 6 (generative pretrained transformer) architecture to model the progression and competing nature of human diseases. We train this model, Delphi-2M, on data from 0.4 million UK Biobank participants and validate it using external data from 1.9 million Danish individuals with no change in parameters. Delphi-2M predicts the rates of more than 1,000 diseases, conditional on each individual's past disease hi…",
         "url": "https://pubmed.ncbi.nlm.nih.gov/40963019/",
         "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
         "source": "Nature",
-        "time": "2025-09-18",
+        "time": "2025 Sep 1",
         "tags": [
           "Peer-reviewed",
           "Radiology"
         ]
       },
       {
-        "id": "c04486aa5f11a7ed",
-        "title": "Augmenting conventional criteria: a CT-based deep learning radiomics nomogram for early recurrence risk stratification in hepatocellular carcinoma after liver transplantation.",
-        "summary": "We developed a deep learning radiomics nomogram (DLRN) using CT scans to improve clinical decision-making and risk stratification for early recurrence of hepatocellular carcinoma (HCC) after transplantation, which typically has a poor prognosis. In this two-center study, 245 HCC patients who had contrast-enhanced CT before liver transplantation were split into a training set (n = 184) and a validation set (n = 61). We extracted radiomics and deep learning features from tumor and peritumor areas on preoperative CT images. The DLRN was created by combining these features with significant clinica",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40962936/",
+        "id": "ba256eb4fbed43e5",
+        "title": "Rapid learning of neural circuitry from holographic ensemble stimulation enabled by model-based compressed sensing.",
+        "summary": "Discovering how computations are implemented in the brain at the level of monosynaptic connectivity requires probing for connections from potentially thousands of presynaptic candidate neurons. Two-photon optogenetics is a promising technology for mapping such connectivity via sequential stimulation of individual neurons while recording postsynaptic responses intracellularly. However, this technique is currently not scalable because stimulating neurons one by one requires prohibitively long experiments. Here we developed novel computational tools that, when combined, enable learning of monosynaptic connectivity from high-speed holographic ensemble stimulation. First, we developed a model-based compressed sensing algorithm that identifies connections from postsynaptic responses evoked by st…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962967/",
         "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "Insights into imaging",
-        "time": "2025-09-18",
+        "source": "Nature neuroscience",
+        "time": "2025 Sep 1",
         "tags": [
           "Peer-reviewed",
           "Radiology"
         ]
       },
       {
-        "id": "abc07f5d9b70afa3",
+        "id": "9a34d8815bf03115",
+        "title": "Metabolic variation reflects dietary exposure in a multi-ethnic Asian population.",
+        "summary": "",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962943/",
+        "cover": "",
+        "source": "Nature metabolism",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "b9a50b2139081818",
+        "title": "Augmenting conventional criteria: a CT-based deep learning radiomics nomogram for early recurrence risk stratification in hepatocellular carcinoma after liver transplantation.",
+        "summary": "",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962936/",
+        "cover": "",
+        "source": "Insights into imaging",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "2b68c7dcf02a7404",
+        "title": "Machine learning-derived predictive model for post-ERCP pancreatitis in patients with common bile duct stones: a retrospective multicenter study.",
+        "summary": "",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962918/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Surgical endoscopy",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "fdde8671c9e24acb",
+        "title": "Metabolomic profiling and machine learning-based biomarker identification for oligoasthenozoospermia.",
+        "summary": "Introduction and objectives: Oligoasthenozoospermia, characterized by a low sperm count and impaired progressive motility, significantly contributes to male infertility. This study examines the metabolic disparities between individuals with oligoasthenozoospermia (n = 30) and healthy controls (n = 30) utilizing ultra-high-performance liquid chromatography-quadrupole time-of-flight mass spectrometry (UPLC-Q-TOF/MS). Methods: A total of 1,331 metabolites were identified in positive ion mode and 870 in negative ion mode, with differential analysis indicating 211 significantly different metabolites between the two groups. Pathway analysis identified key metabolic pathways, including the pentose phosphate pathway, TCA cycle, glycerophospholipid metabolism, and fatty acid metabolism. Subsequentl…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962908/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Metabolomics : Official journal of the Metabolomic Society",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "ee82df93652fe11d",
+        "title": "Learning the cellular origins across cancers using single-cell chromatin landscapes.",
+        "summary": "Deciphering the pre-malignant cell of origin (COO) of different cancers is critical for understanding tumor development and improving diagnostic and therapeutic strategies in oncology. Prior work demonstrates that somatic mutations preferentially accumulate in closed chromatin regions of a cancer's COO. Leveraging this information, we combine 3,669 whole genome sequencing patient samples, 559 single-cell chromatin accessibility cellular profiles, and machine learning to predict the COO of 37 cancer subtypes with high robustness and accuracy, confirming both the known anatomical and cellular origins of numerous cancers, often at cell subset resolution. Importantly, our data-driven approach predicts a basal COO for most small cell lung cancers and a neuroendocrine COO for rare atypical cases…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962882/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Nature communications",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "85e4c540f8596e2e",
+        "title": "Longitudinal multi-omics analysis of umbilical cord blood and childhood serum in Autism.",
+        "summary": "There is considerable evidence implicating maternal immune activation (MIA) and cytokine dysregulation in the pathophysiology of Autism. However, cytokines, due to their lack of specificity are unlikely to translate clinically as prognostic biomarkers. Our aim was to explore the perinatal molecular pathways dysregulated in umbilical cord blood, which precede a diagnosis of childhood Autism, and ascertain whether these putative biomarkers persisted into pre-pubertal childhood. In a cohort of 2137 mother-infant dyads, we conducted a nested case-control study in the BASELINE Birth Cohort. Proteomic and metabolomic analysis was performed on cord blood plasma from 22 children diagnosed with Autism before age 5, and 44 neurotypical controls. In a clinical diagnostic follow-up between 7-10 years…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962828/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Molecular psychiatry",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "d055583b2b70ae10",
+        "title": "[Application of Machine Learning Techniques for Antimicrobial Resistance Prediction].",
+        "summary": "Due to the abuse or excessive use of antimicrobials， particularly antibiotics， antimicrobial resistance （AMR） has become one of the major challenges in global public health. The rapid growth of microbial data， facilitated by advancements in high-throughput sequencing technology， underscores the importance of leveraging machine learning for predicting AMR and identifying resistance markers. Machine learning， encompassing supervised and unsupervised learning， has been proven effective by early studies of AMR prediction. By analyzing microbial genomes and AMR data to build machine learning models， we can improve predictions of microbial resistance and develop more effective antibiotic use strategies， thereby controlling the spread of resistance. This review article focuses on the specific con…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962758/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Huan jing ke xue= Huanjing kexue",
+        "time": "2025 Sep 8",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "bf83c8143bd3fa8f",
+        "title": "Artificial Intelligence-Based Approaches for Brain Tumor Segmentation in MRI: A Review.",
+        "summary": "Manually segmenting brain tumors in magnetic resonance imaging (MRI) is a time-consuming task that requires years of professional experience and clinical expertise. To address this challenge, researchers have proposed artificial intelligence-based strategies that enable quick and automatic segmentation of brain tumors. These AI techniques are crucial for the early identification of brain tumors, leading to earlier diagnoses and significant therapeutic benefits. convolutional neural networks (CNN), vision transformers (ViT), and other automated approaches that leverage machine learning and deep learning techniques have demonstrated effectiveness in diagnosing tumor type, size, and location. Consequently, brain tumor segmentation has emerged as a prominent issue in medical image analysis. Th…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962716/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "NMR in biomedicine",
+        "time": "2025 Nov",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "eaef31bf52ff486e",
+        "title": "Senescence-associated miRNAs predict survival and modulate the tumor immune microenvironment via SPOCK1 targeting in clear cell renal cell carcinoma.",
+        "summary": "Background: Clear cell renal cell carcinoma(ccRCC) is a highly aggressive urological malignancy originating from proximal tubular epithelial cells. Celluar senescence plays a pivotal role in tumorigenesis and shaping the immune landscape. MicroRNAs (miRNAs) are essential regulators of tumor metabolism and biological behavior, and identifying senescence-associated miRNA (CS-miRNA) signatures is critical for improving prognosis and guiding treatment strategies. Methods: We proformed multiomics analysis on 616 ccRCC samples from the TCGA-KIRC dataset and developed a CS-miRNA-based scoring system(CS-miRNAs-Score) using machine learning algorithms to evaluate clinical and immunological characteristics. The model was externally validated with miRNA-seq data from 21 clinical ccRCC samples. Based…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962692/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Urologic oncology",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "8cdd81d2b18f06ad",
+        "title": "Postoperative Sore Throat Following Double-lumen Tube Insertion in Adults Undergoing Surgery: A Scoping Review.",
+        "summary": "Double-lumen tubes (DLTs) are associated with a high incidence of postoperative sore throat (POST). The aim of this scoping review was to map the current evidence for POST prevention following DLT use in adults and identify knowledge gaps. Literature search was conducted via standard electronic search engines. Randomized controlled trials (RCTs) involving adult patients undergoing surgeries with DLTs, where POST (incidence or severity) was reported as a primary outcome, were included. Twelve RCTs involving 1,632 patients were included in this review. Most studies were of good quality. The maximum incidence of POST (56.4%) and hoarseness of voice (44.3%) was present in the first postoperative hour in the control groups. Even at 24 hours, the incidence of POST was 31.2% in the control groups…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962668/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Journal of cardiothoracic and vascular anesthesia",
+        "time": "2025 Aug 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "127f547f2eba1388",
+        "title": "Enhancing Diagnostic Efficacy of Artificial Intelligence in Mammography: Considerations for Clinical Integration.",
+        "summary": "",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962634/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Academic radiology",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "d53a3a6c56c0def6",
+        "title": "Revisiting LLMs and Lung Cancer Questions: How AI Responds to Common Lung Cancer Questions Two Years Later.",
+        "summary": "Rationale and objectives: This study aimed to evaluate and compare the accuracy, consistency, and reliability of five state-of-the-art LLMs available to the public (chatbots) - GPT-o3-mini, Gemini, DeepSeek R1, Claude, and Perplexity-in answering standardized lung cancer-related questions, building upon prior assessments of earlier models in 2023. Methods: Forty lung cancer-related questions were developed by experienced radiologists, based on Lung-RADS and Fleischner Society guidelines. On February 16, 2025, each of the five models answered these standardized questions. Responses were independently graded by three radiology experts using a majority-voting system to classify answers as correct, partially correct, incorrect, or no answer (refusal). Statistical analyses included accuracy cal…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962633/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Academic radiology",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "16b97da1f229686e",
         "title": "[Promote the application and innovation of artificial intelligence in pediatric neurological diseases].",
         "summary": "近年来，人工智能在医疗健康领域快速发展，逐渐应用于临床决策支持，尤其在多模态数据整合、脑机接口、数字疗法等领域进展迅速。儿童神经系统疾病病因复杂、异质性强，早期筛查、精准分型与个性化治疗对改善预后尤为关键。人工智能通过机器学习和模型构建，可辅助疾病诊断、优化治疗方案，提高诊疗质量和效率。本文探讨人工智能在儿童神经系统疾病精准诊疗中的实践现状与未来方向，以推动疾病防治和脑健康促进，助力人口高质量发展。.",
         "url": "https://pubmed.ncbi.nlm.nih.gov/40962534/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "cover": "",
         "source": "Zhonghua er ke za zhi = Chinese journal of pediatrics",
-        "time": "2025-09-18",
+        "time": "2025 Sep 1",
         "tags": [
-          "Peer-reviewed"
+          "Peer-reviewed",
+          "Radiology"
         ]
       },
       {
-        "id": "3ee88ff0513f4c04",
+        "id": "b68e6f373c0744c3",
+        "title": "Identification and Validation of Mitochondria-Related Genes for Diagnosis of Early-Stage Sepsis.",
+        "summary": "",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962454/",
+        "cover": "",
+        "source": "Annals of clinical and laboratory science",
+        "time": "2025 Jul",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "87ec4fc24fdedf4c",
+        "title": "Effect of plant-based foods and (poly)phenol supplementation on gut-microbiota metabolism in participants with overweight or obesity and cardiometabolic risk: a study protocol for a single-blind, parallel and randomised controlled trial.",
+        "summary": "Introduction: Dietary (poly)phenols have beneficial properties that may play a relevant role in the management of overweight/obesity and cardiometabolic risk factors, modulating physiological and molecular pathways involved in energy metabolism, adiposity and gut microbiota-derived metabolites. Methods and analysis: The Prevention/Precision Diet in Araucanía (PREDIET-ARAC) trial is a randomised, single-blind, parallel arm, placebo-controlled, clinical trial designed to assess the potential health benefits of (poly)phenol intake through either diet or supplementation. The study will evaluate the effectiveness of a healthy plant-based diet (PBD) rich in (poly)phenols compared with (poly)phenol supplementation during a caloric restriction intervention.A total of 99 adults (aged 25-45 years) w…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962336/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "BMJ open",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "c1ab8f94bc012d8b",
+        "title": "Deep learning application for genomic data analysis.",
+        "summary": "Modern genomic sequencing techniques have advanced rapidly, thereby improving data production rates and dimensionality. With this accelerated growth, machine learning, especially deep learning, has been leveraged to analyze complex data and complement conventional bioinformatics methods. Deep learning approaches have been successfully applied in genomics, leading to the development of state-of-the-art models and significantly improved interpretation of genomic data. Here, we review deep learning models in four genomic domains: variant calling, gene expression regulation, motif finding, and 3D chromatin interactions. We summarize the key aspects of model development, such as training and generalization, that enable the efficient application of deep learning models in genomic research. Real-…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962325/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "BMB reports",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "749cb6a4caecd6da",
         "title": "Decoding Liquid Biopsy with AI: Freeze-Thaw-Induced Fingerprints in Small Extracellular Vesicles.",
-        "summary": "Liquid biopsy enables noninvasive cancer diagnosis via the detection of circulating tumor cells and small extracellular vesicles (sEVs), yet accurate tumor subtype discrimination remains limited by low biomarker abundance. Here, we propose a low-cost, automated cancer classification platform based on freeze-thaw-induced floating patterns of gold nanoparticles (FTFPA), integrating smartphone-based image capture and AI-driven analysis. The system classifies nine cell types and their sEVs with F1 scores of 0.891 and 0.898 (n = 864) and achieves 0.814 (n = 576) on clinical samples including health",
+        "summary": "Liquid biopsy enables noninvasive cancer diagnosis via the detection of circulating tumor cells and small extracellular vesicles (sEVs), yet accurate tumor subtype discrimination remains limited by low biomarker abundance. Here, we propose a low-cost, automated cancer classification platform based on freeze-thaw-induced floating patterns of gold nanoparticles (FTFPA), integrating smartphone-based image capture and AI-driven analysis. The system classifies nine cell types and their sEVs with F1 scores of 0.891 and 0.898 ( n = 864) and achieves 0.814 ( n = 576) on clinical samples including healthy controls, breast nodules, and breast cancer subtypes. Capable of processing 96 samples in 1.5 min at 1% of conventional microscopy cost, the method exploits AuNP aggregation driven by freeze-induc…",
         "url": "https://pubmed.ncbi.nlm.nih.gov/40962303/",
         "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
         "source": "Nano letters",
-        "time": "2025-09-18",
+        "time": "2025 Sep 1",
         "tags": [
           "Peer-reviewed",
           "Radiology"
         ]
       },
       {
-        "id": "2fbd7cdd0a8abdb9",
+        "id": "64e0b1c5d1f25c07",
+        "title": "Identification and Taste Presentation Characteristics of Umami Peptides from Hybrid Pork Duroc × (Gaoligongshan × Saba) Based on Peptidomics, Machine Learning, Molecular Docking, and Molecular Dynamics Simulation.",
+        "summary": "The study identified novel umami peptides from hybrid pork Duroc × (Gaoligongshan × Saba) (DGS) and explored their interaction mechanisms with T1R1/T1R3. Liquid chromatography-tandem mass spectrometry (LC-MS/MS) characterized peptide profiles of DGS hot meat (DGSH) and chilled meat (DGSC), revealing a greater umami peptide potential in DGSC. Seven potential umami peptides were screened via bioinformatics and conformational relationship analysis. Sensory evaluation showed five novel peptides (VEGK, VESL, LEEK, LPEAL, and KRLMEDTED) had umami thresholds of 0.21-0.48 mg/mL. Electronic tongue analysis indicated VESL/LEEK had exceeded the umami intensity of equiconcentration MSG, while VEGK exceeded double-concentration MSG. Molecular docking showed the five novel peptides bound to T1R1/T1R3 ma…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962296/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Journal of agricultural and food chemistry",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "ac0b19dbcfa404b2",
+        "title": "Integrative Computational Dissection of Monobenzyl Phthalate Spermatotoxicity: High-Affinity Binding Disrupts ACE2-CYP17A1 Coregulation in Non-Obstructive Azoospermia.",
+        "summary": "Phthalates, as typical environmental endocrine disruptors, can lead to reproductive toxicity by disrupting human endocrine homeostasis with their metabolites. However, the complexity of human co-exposure to multiple metabolites, confounding biases in traditional studies, and reverse causality issues obscure the causative contributions and pathogenic mechanisms of key toxic metabolites. This study employs a multi-omics integrative strategy, leveraging Mendelian Randomization (MR) to identify Monobenzyl phthalate (MBzP) as a causative risk factor for testicular damage (β = 1.26, P = 0.002). Focusing on Non-obstructive azoospermia (NOA), we integrated network toxicology to identify 15 shared molecular targets. By combining interpretable machine learning, we discovered that core targets ACE2/C…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962235/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Reproductive toxicology (Elmsford, N.Y.)",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "512acd4da072000c",
+        "title": "Cutting-edge nanobiosensors: Revolutionizing cancer diagnosis and enabling precision medicine.",
+        "summary": "Integrating nanotechnology and artificial intelligence (AI) revolutionizes cancer diagnostics, propelling precision medicine into a transformative era. This review examines state-of-the-art nanobiosensors capable of detecting critical biomarkers-circulating tumor DNA (ctDNA), circulating tumor cells (CTCs), and microRNAs (miRNAs), with unprecedented sensitivity and specificity. We comprehensively analyze four primary biosensor modalities: optical, electrochemical, magnetic, and piezoelectric systems. These technologies facilitate early cancer detection, real-time disease monitoring, liquid biopsies, and theranostic applications. AI augments sensor performance by refining device design, optimizing signal processing, and enabling seamless integration within clinical workflows. Innovations in…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962167/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Clinica chimica acta; international journal of clinical chemistry",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "654409e1de5cd8f8",
+        "title": "Insights into AI-Driven Malaria Diagnosis: A Systematic Review with Implications for Plasmodium knowlesi.",
+        "summary": "Plasmodium knowlesi has emerged as a significant zoonotic malaria threat, particularly in Southeast Asia, where its incidence continues to rise. Timely and accurate diagnosis of its blood stages is critical for effective diagnosis and treatment, as disease severity and transmission dynamics vary across different stages. Microscopic examination is the gold standard for malaria diagnosis; however, it is labour-intensive and requires professional interpretation. This makes it prone to variability and possible misclassification, especially among morphologically identical Plasmodium species. Recent advancements in artificial intelligence (AI)-driven approaches, particularly deep learning, offer significant potential to assist microscopists in automating blood-stage identification, reducing diag…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962162/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Acta tropica",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "78afe52037a53e90",
+        "title": "SynthMedic: Utilizing large language models for synthetic discharge summary generation, correction and validation.",
+        "summary": "Background and objective: Synthetic clinical texts can improve transparency and reduce bias and costs when training and evaluating specialized language models in the medical domain. Synthetic texts are freely shareable, as they contain no real patient information, and can be customized for a specific task. The objective of this study is to develop a methodology for generating, validating, and correcting synthetic discharge summaries using LLMs without requiring any real patient data. Methods: The proposed approach uses an LLM to generate synthetic discharge summaries for specific diseases and standard medical references from Merck Manuals to ground the generation in internationally accepted medical practices. We validate the generated summaries using LLMs as well as by human expert validat…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962129/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Journal of biomedical informatics",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "a3e0c749cad6ff95",
         "title": "Current State-of-the-Art 3D MRI Sequences for Assessing Bone Morphology with Emphasis on Cranial and Spinal Imaging: A Narrative Review.",
-        "summary": "Traditionally, CT has been the go-to method for visualizing bone structures, while MRI has been preferred for assessing soft tissues, because structures containing tightly bound water molecules - such as bones, tendons, cartilage, and ligaments - produce a rapidly decaying T2* signal, which conventional MRI sequences fail to capture. To address this limitation, spoiled gradient echo sequences were refined, and short-TE sequences were introduced, enabling radiation-free bone imaging. This advance is particularly crucial for pediatric patients and in scenarios where an MRI-only approach is prefe",
+        "summary": "Traditionally, CT has been the go-to method for visualizing bone structures, while MRI has been preferred for assessing soft tissues, because structures containing tightly bound water molecules - such as bones, tendons, cartilage, and ligaments - produce a rapidly decaying T2* signal, which conventional MRI sequences fail to capture. To address this limitation, spoiled gradient echo sequences were refined, and short-TE sequences were introduced, enabling radiation-free bone imaging. This advance is particularly crucial for pediatric patients and in scenarios where an MRI-only approach is preferred, such as in radiation-sensitive cases and surgical planning.A comprehensive literature review was conducted by searching the PubMed and Google Scholar databases, using specific keywords: \"black b…",
         "url": "https://pubmed.ncbi.nlm.nih.gov/40962128/",
         "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
         "source": "RoFo : Fortschritte auf dem Gebiete der Rontgenstrahlen und der Nuklearmedizin",
-        "time": "2025-09-18",
-        "tags": [
-          "Cardiac MRI",
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "d81817a9059951b9",
-        "title": "Collecting and Sharing Person-Centered AI Clinical Summaries Across Frailty Services Provided by the National Health Service and Voluntary, Community, and Social Enterprise: Protocol for a Co-Design and Feasibility Study.",
-        "summary": "Due to its association with multimorbidity, frailty gives rise to multidimensional needs for different services. Too often, patient preferences and service encounter information are not adequately shared. This developmental study aims to co-design, collect, and analyze encounter data from multiple community and primary-based multidisciplinary teams (MDTs) providing services for people with frailty to develop prototype large language models that can generate clinical and person-centered care summaries. Engaging stakeholders in 2 primary care networks, we will co-design the large language model ",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40961488/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "JMIR research protocols",
-        "time": "2025-09-18",
-        "tags": [
-          "Cardiac MRI",
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "05cc11f8718be9cd",
-        "title": "Digital Health Intervention in Snakebite Management: Scoping Review.",
-        "summary": "Snakebite envenoming is a neglected tropical disease that causes significant morbidity and mortality, with an estimated 81,410-137,880 deaths annually, primarily in rural, low-resource settings. Digital health interventions, particularly mobile apps (mobile-based health apps), offer innovative solutions to improve snakebite management through real-time guidance, antivenom stock tracking, and telemedicine. This scoping review aims to (1) systematically map existing digital mobile-based health interventions for snakebite management and (2) evaluate their key functionalities, accessibility, and g",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40961360/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "Journal of medical Internet research",
-        "time": "2025-09-18",
-        "tags": [
-          "Cardiac MRI",
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "0908e7b3f882c78b",
-        "title": "Comparative Diagnostic Performance of a Multimodal Large Language Model Versus a Dedicated Electrocardiogram AI in Detecting Myocardial Infarction From Electrocardiogram Images: Comparative Study.",
-        "summary": "Accurate and timely electrocardiogram (ECG) interpretation is critical for diagnosing myocardial infarction (MI) in emergency settings. Recent advances in multimodal large language models (LLMs), such as ChatGPT (OpenAI) and Gemini (Google DeepMind), have shown promise in clinical interpretation for medical imaging. However, whether these models analyze waveform patterns or simply rely on text cues remains unclear, underscoring the need for direct comparisons with dedicated ECG artificial intelligence (AI) tools. This study aimed to evaluate the diagnostic performance of ChatGPT and Gemini, a ",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40961357/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "JMIR AI",
-        "time": "2025-09-18",
+        "time": "2025 Sep 1",
         "tags": [
           "Peer-reviewed",
           "Radiology"
         ]
       },
       {
-        "id": "0708410dfbe1fdc7",
-        "title": "Predicting hypertension using PPG sensor data and demographic factors: A machine learning approach.",
-        "summary": "BackgroundHypertension is one of the most important health-related problems worldwide, and its monitoring is necessary constantly.ObjectiveThe regular methods of blood pressure monitoring have disadvantages; hence, the interest in finding better solutions is stirred.MethodsIn this study, PPG signals from 218 subjects in Guilin People's Hospital were analyzed, where 657 PPG recordings were employed together with demographic and clinical data. CNN-Attention, CNN-GRU, and LSTM, have been conducted with z-score normalization and augmentation in an 80:20 train-test split.ResultsThe highest performa",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40961255/",
+        "id": "51b8cb30401e3be2",
+        "title": "Structure prediction and engineering of de novo proteins.",
+        "summary": "De novo proteins represent a challenging frontier at the intersection of evolutionary biology and synthetic biology. Broadly, the term encompasses two distinct categories: naturally evolved de novo proteins, which arise from previously non-coding DNA, and synthetically designed de novo proteins, which are created from scratch through computational and experimental methods. This review provides an overview of the definitions, history, functional significance, and investigation methods for both categories. By examining potential challenges in current de novo protein research, this review highlights the growing convergence between natural evolutionary processes and rational protein engineering, reflecting their importance in biological discovery and human innovations.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962101/",
         "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "Technology and health care : official journal of the European Society for Engineering and Medicine",
-        "time": "2025-09-18",
+        "source": "Biochimica et biophysica acta. Proteins and proteomics",
+        "time": "2025 Sep 1",
         "tags": [
           "Peer-reviewed",
           "Radiology"
         ]
       },
       {
-        "id": "cf90650952a6c889",
-        "title": "Multimodal deep learning integration for predicting renal function outcomes in living donor kidney transplantation: a retrospective cohort study.",
-        "summary": "Accurately predicting post-transplant renal function is essential for optimizing donor-recipient matching and improving long-term outcomes in kidney transplantation (KT). Traditional models using only structured clinical data often fail to account for complex biological and anatomical factors. This study aimed to develop and validate a multimodal deep learning model that integrates computed tomography (CT) imaging, radiology report text, and structured clinical variables to predict 1-year estimated glomerular filtration rate (eGFR) in living donor kidney transplantation (LDKT) recipients. A re",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40961229/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "International journal of surgery (London, England)",
-        "time": "2025-09-18",
-        "tags": [
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "59ee0dc162e1c3db",
-        "title": "CQH-MPN: A Classical-Quantum Hybrid Prototype Network with Fuzzy Proximity-Based Classification for Early Glaucoma Diagnosis.",
-        "summary": "Glaucoma is the second leading cause of blindness worldwide and the only form of irreversible vision loss, making early and accurate diagnosis essential. Although deep learning has revolutionized medical image analysis, its dependence on large-scale annotated datasets poses a significant barrier, especially in clinical scenarios with limited labeled data. To address this challenge, we propose a Classical-Quantum Hybrid Mean Prototype Network (CQH-MPN) tailored for few-shot glaucoma diagnosis. CQH-MPN integrates a quantum feature encoder, which exploits quantum superposition and entanglement fo",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40960965/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "IEEE journal of biomedical and health informatics",
-        "time": "2025-09-18",
-        "tags": [
-          "Clinical AI",
-          "Peer-reviewed"
-        ]
-      },
-      {
-        "id": "bab63554eaf7a2d1",
-        "title": "Habitat-aware radiomics and adaptive 2.5D deep learning predict treatment response and long-term survival in ESCC patients undergoing neoadjuvant chemoimmunotherapy.",
-        "summary": "Current radiomic approaches inadequately resolve spatial intratumoral heterogeneity (ITH) in esophageal squamous cell carcinoma (ESCC), limiting neoadjuvant chemoimmunotherapy (NACI) response prediction. We propose an interpretable multimodal framework to: (1) quantitatively map intra-/peritumoral heterogeneity via voxel-wise habitat radiomics; (2) model cross-sectional tumor biology using 2.5D deep learning; and (3) establish mechanism-driven biomarkers via SHAP interpretability to identify resistance-linked subregions. This dual-center retrospective study analyzed 269 treatment-naïve ESCC pa",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40960691/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "European journal of nuclear medicine and molecular imaging",
-        "time": "2025-09-18",
-        "tags": [
-          "Cardiac MRI",
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "e8f7821c3cd81454",
-        "title": "Artificial intelligence-assisted PET imaging for predicting neoadjuvant chemotherapy response in breast cancer: a systematic review and meta-analysis.",
-        "summary": "This study aims to evaluate the performance of artificial intelligence (AI)-assisted PET imaging in predicting neoadjuvant chemotherapy (NAC) response in breast cancer patients. The Ovid MEDLINE, Ovid Embase, Cochrane, Web of Science, and IEEE Xplore databases were systematically searched for studies utilizing AI algorithms in PET imaging for predicting responses to NAC in breast cancer, covering publications up to June 26, 2025. Binary diagnostic accuracy data were extracted for meta-analysis, with the area under the curve (AUC) serving as the primary outcome. Subgroup analyses and meta-regre",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40960690/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "European journal of nuclear medicine and molecular imaging",
-        "time": "2025-09-18",
-        "tags": [
-          "Cardiac MRI",
-          "Clinical AI",
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "16bd1e6738b83a4b",
-        "title": "Recent advances in breeding systems and their improvement in forage crops.",
-        "summary": "Fodder crops are crops which are mainly grown as feed for livestocks and it consist of a variety of crops ranging from annual to perennial crops. Even with many crops involved, advance crop improvement practices are done less in these crops. With the increase in demand for livestock population, the production and productivity of forage crops will also increased. Considering the present status of research work done in forage crops, it will be hard to meet the increasing demand of feed for livestock. Conventional breeding programs and cross breeding are time consuming and laborious for developin",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40960647/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "Molecular biology reports",
-        "time": "2025-09-18",
-        "tags": [
-          "Cardiac MRI",
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "32dc0505ea208a0a",
-        "title": "Identifying suspicious naevi with dermoscopy via variational autoencoder auxiliary generative classifiers.",
-        "summary": "A naevus is a benign melanocytic skin tumour made up of naevus cells, characterised by variations in size, shape, and colour. Understanding naevi is essential due to their significant role as markers for the risk of developing melanoma. This study focused on creating a visual representation called a manifold that illustrates the distribution of two types of naevi: suspicious and non-suspicious. The research aimed to classify real naevi using generative adversarial networks (GANs), while also generating realistic synthetic samples and interpreting their distribution through a variational manifo",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40960587/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "Physical and engineering sciences in medicine",
-        "time": "2025-09-18",
-        "tags": [
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "38652d6d98cb403a",
-        "title": "Assessing the Impact of Downsampled ECGs and Alternative Loss Functions in Multi-Label Classification of 12-Lead ECGs.",
-        "summary": "The electrocardiogram (ECG) is an almost universally accessible diagnostic tool for heart disease. An ECG is measured by using an electrocardiograph, and today's electrocardiographs use built-in software to interpret the ECGs automatically after they are recorded. However, these algorithms exhibit limited performance, and therefore, clinicians usually have to manually interpret the ECG, regardless of whether an algorithm has interpreted it or not. Manual interpretation of the ECG can be time-consuming and requires specific skills. Therefore, better algorithms are clearly needed to make correct",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40960574/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "Cardiovascular engineering and technology",
-        "time": "2025-09-18",
-        "tags": [
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "20e3d82e49898adc",
-        "title": "U-net-based segmentation of foreign bodies and ghost images in panoramic radiographs.",
-        "summary": "This study aimed to develop and evaluate a deep convolutional neural network (CNN) model for the automatic segmentation of foreign bodies and ghost images in panoramic radiographs (PRs), which can complicate diagnostic interpretation. A dataset of 11,226 PRs from four devices was annotated by two radiologists using the Computer Vision Annotation Tool. A U-Net-based CNN model was trained and evaluated using Intersection over Union (IoU), Dice coefficient, accuracy, precision, recall, and F1 score. For foreign body segmentation, the model achieved validation Dice and IoU scores of 0.9439 and 0.9",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40960567/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "Oral radiology",
-        "time": "2025-09-18",
-        "tags": [
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "27bf329c23206818",
-        "title": "Influence of Mammography Acquisition Parameters on AI and Radiologist Interpretive Performance.",
-        "summary": "\"Just Accepted\" papers have undergone full peer review and have been accepted for publication in Radiology: Artificial Intelligence. This article will undergo copyediting, layout, and proof review before it is published in its final version. Please note that during production of the final copyedited article, errors may be discovered which could affect the content. Purpose To evaluate the impact of screening mammography acquisition parameters on the interpretive performance of AI and radiologists. Materials and Methods The associations between seven mammogram acquisition parameters-mammography ",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40960399/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "Radiology. Artificial intelligence",
-        "time": "2025-09-18",
-        "tags": [
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "77b1416e8cc5c930",
-        "title": "A Deep Learning Framework for Synthesizing Longitudinal Infant Brain MRI during Early Development.",
-        "summary": "\"Just Accepted\" papers have undergone full peer review and have been accepted for publication in Radiology: Artificial Intelligence. This article will undergo copyediting, layout, and proof review before it is published in its final version. Please note that during production of the final copyedited article, errors may be discovered which could affect the content. Purpose To develop a three-stage, age-and modality-conditioned framework to synthesize longitudinal infant brain MRI scans, and account for rapid structural and contrast changes during early brain development. Materials and Methods T",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40960398/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "Radiology. Artificial intelligence",
-        "time": "2025-09-18",
-        "tags": [
-          "Cardiac MRI",
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "734c006e52d79329",
-        "title": "DLMUSE: Robust Brain Segmentation in Seconds Using Deep Learning.",
-        "summary": "\"Just Accepted\" papers have undergone full peer review and have been accepted for publication in Radiology: Artificial Intelligence. This article will undergo copyediting, layout, and proof review before it is published in its final version. Please note that during production of the final copyedited article, errors may be discovered which could affect the content. Purpose To introduce an open-source deep learning brain segmentation model for fully automated brain MRI segmentation, enabling rapid segmentation and facilitating large-scale neuroimaging research. Materials and Methods In this retr",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40960397/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "Radiology. Artificial intelligence",
-        "time": "2025-09-18",
-        "tags": [
-          "Cardiac MRI",
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "2deee1a6251f34bd",
-        "title": "Artificial Intelligence in Medicine.",
-        "summary": "Artificial intelligence (AI) holds the potential to influence and change the world through many different fields such as science, economics, technology, and art. The modern foundations of AI, with theoretical roots dating back to ancient Egyptian and Greek civilisations, were laid by Alan Turing and John McCarthy in the twentieth century. Early practices in the medical field focused on the archiving and interpretation of radiologic images and possible preliminary diagnoses. As the processing capacity of computers has advanced, so has their skill competence, and it has become possible to implem",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40960385/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "Thoracic research and practice",
-        "time": "2025-09-18",
-        "tags": [
-          "Cardiac MRI",
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "0aabac54b468a827",
-        "title": "Tailoring Chemiresistive Nanomaterials Toward Integrated Circuit Compatible Fabrication of Gas Sensors.",
-        "summary": "Many emerging intelligent technologies spring up like mushrooms, such as artificial intelligence, big data and Internet of Things industries, where chemical gas sensors have been regarded as the \"electronic nose\" that surpasses the limit of human smell. They have been widely applied in various fields, including aerospace, clinical diagnosis and environmental protection. As the heart of gas sensors, various sensitive materials (e.g., metal oxides, conductive polymers, metal chalcogenide) with tailored functions (e.g., hydrophilicity, conductivity, anti-humidity) and microstructures (e.g., porou",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40960265/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "Advanced materials (Deerfield Beach, Fla.)",
-        "time": "2025-09-18",
-        "tags": [
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "40a1c42f5eeabeb6",
-        "title": "Artificial Intelligence-Assisted Interpretation of Prostate MRI Improves Cancer Detection.",
+        "id": "24f6bc4c4df23d9c",
+        "title": "Based on disulfide accumulation, leveraging a THBS1-signature to improve the outcome of head and neck carcinoma patients.",
         "summary": "",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40960249/",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962096/",
+        "cover": "",
+        "source": "International journal of biological macromolecules",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "0882b59e3252044c",
+        "title": "Immune checkpoint molecules as predictive markers of COVID-19 severity: A comprehensive univariable and multivariable analysis.",
+        "summary": "",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962068/",
+        "cover": "",
+        "source": "Immunology letters",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "d1effd6458bf286d",
+        "title": "The Future of Allergy Management: How Artificial Intelligence Is Changing the Game.",
+        "summary": "",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962029/",
+        "cover": "",
+        "source": "The journal of allergy and clinical immunology. In practice",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "5e2a8abcae716ad5",
+        "title": "Circulating extracellular vesicle isomiR signatures predict therapy response in patients with multiple myeloma.",
+        "summary": "",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40961943/",
+        "cover": "",
+        "source": "Cell reports. Medicine",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "9e0f3a5310863645",
+        "title": "Pancreatic cancer risk prediction using deep sequential modeling of longitudinal diagnostic and medication records.",
+        "summary": "",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40961920/",
+        "cover": "",
+        "source": "Cell reports. Medicine",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Radiology"
+        ]
+      },
+      {
+        "id": "f921443be2b1c2f8",
+        "title": "Artificial intelligence in wound care education: Scoping review.",
+        "summary": "Background: Artificial intelligence is transforming healthcare education, offering innovative teaching and skill development approaches. However, its implementation and effectiveness in wound care education remain unclear. Objective: To map and analyze the available evidence on the potential impact of artificial intelligence in wound care education, identify knowledge gaps, and provide recommendations for future research. Design/methods: This scoping review followed the Joanna Briggs Institute guidelines for scoping reviews and the PRISMA-ScR guidelines. The search was first conducted in December 2023 and updated on 30 November 2024 across the following databases: CINAHL Ultimate, MEDLINE, Cochrane Library, Academic Search Complete, Scientific Electronic Library Online (Scielo), Scopus, an…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40961828/",
         "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "AJR. American journal of roentgenology",
-        "time": "2025-09-18",
-        "tags": [
-          "Cardiac MRI",
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "8d450450867e1926",
-        "title": "Reply to \"When Artificial Intelligence Steers the Boat: Utilization Scenarios for Low-Dose CT\".",
-        "summary": "",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40960243/",
-        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "AJR. American journal of roentgenology",
-        "time": "2025-09-18",
+        "source": "Nurse education today",
+        "time": "2025 Sep 1",
         "tags": [
           "Peer-reviewed",
           "Radiology"
-        ]
-      },
-      {
-        "id": "12839ec4144a7619",
-        "title": "When Artificial Intelligence Steers the Boat: Utilization Scenarios for Low-Dose CT Lung Cancer Screening.",
-        "summary": "",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40960242/",
-        "cover": "",
-        "source": "AJR. American journal of roentgenology",
-        "time": "2025-09-18",
-        "tags": [
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "8d9d141afc8642df",
-        "title": "Global Trends and Emerging Themes in Tele-Ophthalmology Research: A Bibliometric Analysis (1993 to 2024).",
-        "summary": "Tele-ophthalmology is transforming eye care delivery, particularly in remote and underserved areas, where specialist shortages and geographic barriers prevent millions from receiving timely diagnosis and treatment for preventable blindness. Tele-ophthalmology has emerged as a critical solution to bridge these care gaps, with applications ranging from remote screening, diagnosis, and monitoring of conditions like diabetic retinopathy and glaucoma. Despite rapid technological advances and growing implementation, the research landscape lacks literature providing an overview of global trends, coll",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40959961/",
-        "cover": "",
-        "source": "Seminars in ophthalmology",
-        "time": "2025-09-18",
-        "tags": [
-          "Cardiac MRI",
-          "Clinical AI",
-          "Peer-reviewed"
-        ]
-      },
-      {
-        "id": "7fdc7bf374d1e3d0",
-        "title": "NMR-based deep learning classification of raw cow's milk samples in different stages of mastitis.",
-        "summary": "Bovine mastitis is an inflammation of the mammary glands, usually caused by various pathogenic bacteria combined with glandular tissue injury of the cow's udder. Mastitis significantly affects the milk composition, since it changes the protein quality, the fatty acid content, the number and types of small-molecule metabolites and the concentrations of lactose and minerals. The main goal of this study was to evaluate nuclear magnetic resonance (NMR) data of raw milk samples without pre-treatment as a fingerprint for the deep reinforcement learning (DRL) protocol and to develop a reliable predic",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40959907/",
-        "cover": "",
-        "source": "Journal of the science of food and agriculture",
-        "time": "2025-09-18",
-        "tags": [
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "c035a56f66a190a6",
-        "title": "Immunogenicity, security and protection against small ruminant lentivirus (SRLV) challenge in sheep, induced by intranasal immunization with a recombinant Sendai virus vector expressing SRLV gag-P25.",
-        "summary": "Small ruminant lentiviruses (SRLV) are responsible for significant economic losses in sheep and goat farming; however, effective vaccination strategies remain unavailable. This study evaluated the immunogenicity, safety, and protective efficacy of a recombinant Sendai virus vector (SeV) expressing SRLV gag-P25 (rSeV-GFP-P25) in lambs. Twenty-one SRLV-negative lambs were divided into three groups and inoculated intranasally thrice with culture medium (group 1); SeV-GFP (group 2) or rSeV-GFP-P25 (group 3). Lambs were challenged with homologous SRLV at 16 weeks post-first immunization. Clinical a",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40959881/",
-        "cover": "",
-        "source": "The veterinary quarterly",
-        "time": "2025-09-18",
-        "tags": [
-          "Cardiac MRI",
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "21f0857c7a1548c9",
-        "title": "Deep Learning-Driven Discovery of Novel Antimicrobial Peptides from Large-Scale Protist Genomes and Experimental Characterization.",
-        "summary": "The escalating issue of antibiotic resistance has created an urgent global demand within the biomedical field for the discovery of novel antimicrobial molecules as alternatives to traditional antibiotics. Previous studies have reported the identification of potential candidate antimicrobial peptides (AMPs) from extensive bacterial genomes by using deep learning. However, protists, as unique microorganisms capable of thriving in complex ecological environments, represent a largely untapped reservoir of unknown AMP resources that are awaiting systematic exploration. In this study, we harnessed d",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40958742/",
-        "cover": "",
-        "source": "Journal of chemical information and modeling",
-        "time": "2025-09-18",
-        "tags": [
-          "Cardiac MRI",
-          "Genomics",
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "c0066e8c01eb7646",
-        "title": "Integration of Generative Artificial Intelligence into Urological Practice: A Cross-Sectional Survey Analysis from the EAU Endourology.",
-        "summary": "Rapid advancements in artificial intelligence (AI) have significantly impacted health care, notably within the field of urology, where generative AI presents opportunities to enhance patient education, streamline clinical workflows, and support research activities. This prospective, cross-sectional study systematically investigated the adoption of generative AI among urology professionals, exploring usage patterns, perceived benefits, and barriers to broader implementation. The survey was developed by an expert panel from the Endourology Section of the European Association of Urology and colla",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40958684/",
-        "cover": "",
-        "source": "Journal of endourology",
-        "time": "2025-09-18",
-        "tags": [
-          "Cardiac MRI",
-          "Clinical AI",
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "b9dd8e4971e800d2",
-        "title": "Deep Learning-Based Automatic Classification of Stroke Size in Patients With Atrial Fibrillation.",
-        "summary": "",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40955115/",
-        "cover": "",
-        "source": "Journal of stroke",
-        "time": "2025-09-18",
-        "tags": [
-          "Clinical AI",
-          "Peer-reviewed"
-        ]
-      },
-      {
-        "id": "9b6ce1828c1e18c7",
-        "title": "Comparison of ChatGPT-3.5 and GPT-4 as potential tools in artificial intelligence-assisted clinical practice in renal and liver transplantation.",
-        "summary": "Kidney and liver transplantation are two sub-specialized medical disciplines, with transplant professionals spending decades in training. While artificial intelligence-based (AI-based) tools could potentially assist in everyday clinical practice, comparative assessment of their effectiveness in clinical decision-making remains limited. To compare the use of ChatGPT and GPT-4 as potential tools in AI-assisted clinical practice in these challenging disciplines. In total, 400 different questions tested ChatGPT's/GPT-4 knowledge and decision-making capacity in various renal and liver transplantati",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40881761/",
-        "cover": "",
-        "source": "World journal of transplantation",
-        "time": "2025-09-18",
-        "tags": [
-          "Peer-reviewed",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "96dcf8ca70cec701",
-        "title": "Combating Biomedical Misinformation through Multi-modal Claim Detection   and Evidence-based Verification",
-        "summary": "Misinformation in healthcare, from vaccine hesitancy to unproven treatments, poses risks to public health and trust in medical systems. While machine learning and natural language processing have advanced automated fact-checking, validating biomedical claims remains uniquely challenging due to complex terminology, the need for domain expertise, and the critical importance of grounding in scientific evidence. We introduce CER (Combining Evidence and Reasoning), a novel framework for biomedical fact-checking that integrates scientific evidence retrieval, reasoning via large language models, and ",
-        "url": "http://arxiv.org/abs/2509.13888v1",
-        "cover": "http://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
-        "source": "arXiv",
-        "time": "2025-09-17",
-        "tags": [
-          "Cardiac MRI",
-          "Preprint",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "a7a4ec43669fc49e",
-        "title": "Combining Evidence and Reasoning for Biomedical Fact-Checking",
-        "summary": "Misinformation in healthcare, from vaccine hesitancy to unproven treatments, poses risks to public health and trust in medical systems. While machine learning and natural language processing have advanced automated fact-checking, validating biomedical claims remains uniquely challenging due to complex terminology, the need for domain expertise, and the critical importance of grounding in scientific evidence. We introduce CER (Combining Evidence and Reasoning), a novel framework for biomedical fact-checking that integrates scientific evidence retrieval, reasoning via large language models, and ",
-        "url": "http://arxiv.org/abs/2509.13879v1",
-        "cover": "http://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
-        "source": "arXiv",
-        "time": "2025-09-17",
-        "tags": [
-          "Cardiac MRI",
-          "Preprint",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "9fda8599d8a0c1ab",
-        "title": "Improving AI coaching with Gemini using real-world Fitbit data",
-        "summary": "Nature Medicine, Published online: 17 September 2025; doi:10.1038/s41591-025-03988-xWe created and curated three benchmark datasets to assess large language model (LLM) performance on sleep and fitness tasks ranging from answering expert questions to real-world coaching scenarios. Fine-tuning the Gemini LLM on real-world coaching tasks and self-reported sleep-quality outcomes improved its performance and provided a benchmark for further development.",
-        "url": "https://www.nature.com/articles/s41591-025-03988-x",
-        "cover": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41591-025-03988-x/MediaObjects/41591_2025_3988_Fig1_HTML.png",
-        "source": "www.nature.com",
-        "time": "2025-09-17",
-        "tags": [
-          "Cardiac MRI",
-          "Journal"
-        ]
-      },
-      {
-        "id": "b7436f35888bb9d7",
-        "title": "Time for the exposome to shape policy",
-        "summary": "Nature Medicine, Published online: 17 September 2025; doi:10.1038/s41591-025-03990-3For exposome research to make a difference, it must be diversified and translate into policies that protect health.",
-        "url": "https://www.nature.com/articles/s41591-025-03990-3",
-        "cover": "https://www.nature.com/static/images/favicons/nature/apple-touch-icon-f39cb19454.png",
-        "source": "www.nature.com",
-        "time": "2025-09-17",
-        "tags": [
-          "Cardiac MRI",
-          "Journal",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "8edf2bc00cdaf381",
-        "title": "An implantable system to restore hemodynamic stability after spinal cord injury",
-        "summary": "Nature Medicine, Published online: 17 September 2025; doi:10.1038/s41591-025-03614-wA purpose-built implantable system based on biomimetic epidural electrical stimulation of the spinal cord reduces the severity of hypotensive complications in people with spinal cord injury and improves quality of life.",
-        "url": "https://www.nature.com/articles/s41591-025-03614-w",
-        "cover": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41591-025-03614-w/MediaObjects/41591_2025_3614_Fig1_HTML.png",
-        "source": "www.nature.com",
-        "time": "2025-09-17",
-        "tags": [
-          "Cardiac MRI",
-          "Journal",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "823bac818f1cb743",
-        "title": "Intelligent Healthcare Imaging Platform An VLM-Based Framework for   Automated Medical Image Analysis and Clinical Report Generation",
-        "summary": "The rapid advancement of artificial intelligence (AI) in healthcare imaging has revolutionized diagnostic medicine and clinical decision-making processes. This work presents an intelligent multimodal framework for medical image analysis that leverages Vision-Language Models (VLMs) in healthcare diagnostics. The framework integrates Google Gemini 2.5 Flash for automated tumor detection and clinical report generation across multiple imaging modalities including CT, MRI, X-ray, and Ultrasound. The system combines visual feature extraction with natural language processing to enable contextual imag",
-        "url": "http://arxiv.org/abs/2509.13590v1",
-        "cover": "http://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
-        "source": "arXiv",
-        "time": "2025-09-16",
-        "tags": [
-          "Cardiac MRI",
-          "Preprint",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "f6fc92248b44899a",
-        "title": "RadGame: An AI-Powered Platform for Radiology Education",
-        "summary": "We introduce RadGame, an AI-powered gamified platform for radiology education that targets two core skills: localizing findings and generating reports. Traditional radiology training is based on passive exposure to cases or active practice with real-time input from supervising radiologists, limiting opportunities for immediate and scalable feedback. RadGame addresses this gap by combining gamification with large-scale public datasets and automated, AI-driven feedback that provides clear, structured guidance to human learners. In RadGame Localize, players draw bounding boxes around abnormalitie",
-        "url": "http://arxiv.org/abs/2509.13270v1",
-        "cover": "http://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
-        "source": "arXiv",
-        "time": "2025-09-16",
-        "tags": [
-          "Cardiac MRI",
-          "Preprint",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "4b12480c8bcfe256",
-        "title": "ORCA: A Comprehensive AI-Driven Platform for Digital Pathology Analysis   and Biomarker Discovery",
-        "summary": "Digital pathology has emerged as a transformative approach to tissue analysis, offering unprecedented opportunities for objective, quantitative assessment of histopathological features. However, the complexity of implementing artificial intelligence (AI) solutions in pathology workflows has limited widespread adoption. Here we present ORCA (Optimized Research and Clinical Analytics), a comprehensive no-code AI platform specifically designed for digital pathology applications. ORCA addresses critical barriers to AI adoption by providing an intuitive interface that enables pathologists and resea",
-        "url": "http://arxiv.org/abs/2509.13044v1",
-        "cover": "http://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
-        "source": "arXiv",
-        "time": "2025-09-16",
-        "tags": [
-          "Preprint",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "f1db3610bb0f8c77",
-        "title": "Spatiotemporal graph neural process for reconstruction, extrapolation,   and classification of cardiac trajectories",
-        "summary": "We present a probabilistic framework for modeling structured spatiotemporal dynamics from sparse observations, focusing on cardiac motion. Our approach integrates neural ordinary differential equations (NODEs), graph neural networks (GNNs), and neural processes into a unified model that captures uncertainty, temporal continuity, and anatomical structure. We represent dynamic systems as spatiotemporal multiplex graphs and model their latent trajectories using a GNN-parameterized vector field. Given the sparse context observations at node and edge levels, the model infers a distribution over lat",
-        "url": "http://arxiv.org/abs/2509.12953v1",
-        "cover": "http://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
-        "source": "arXiv",
-        "time": "2025-09-16",
-        "tags": [
-          "Cardiac MRI",
-          "Preprint",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "617a3000b7098541",
-        "title": "Data Scaling Laws for Radiology Foundation Models",
-        "summary": "Foundation vision encoders such as CLIP and DINOv2, trained on web-scale data, exhibit strong transfer performance across tasks and datasets. However, medical imaging foundation models remain constrained by smaller datasets, limiting our understanding of how data scale and pretraining paradigms affect performance in this setting. In this work, we systematically study continual pretraining of two vision encoders, MedImageInsight (MI2) and RAD-DINO representing the two major encoder paradigms CLIP and DINOv2, on up to 3.5M chest x-rays from a single institution, holding compute and evaluation pr",
-        "url": "http://arxiv.org/abs/2509.12818v1",
-        "cover": "http://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
-        "source": "arXiv",
-        "time": "2025-09-16",
-        "tags": [
-          "Preprint",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "12b4010036460d03",
-        "title": "A Novel Recurrent Neural Network Framework for Prediction and Treatment   of Oncogenic Mutation Progression",
-        "summary": "Despite significant medical advancements, cancer remains the second leading cause of death, with over 600,000 deaths per year in the US. One emerging field, pathway analysis, is promising but still relies on manually derived wet lab data, which is time-consuming to acquire. This work proposes an efficient, effective end-to-end framework for Artificial Intelligence (AI) based pathway analysis that predicts both cancer severity and mutation progression, thus recommending possible treatments. The proposed technique involves a novel combination of time-series machine learning models and pathway an",
-        "url": "http://arxiv.org/abs/2509.12732v1",
-        "cover": "http://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
-        "source": "arXiv",
-        "time": "2025-09-16",
-        "tags": [
-          "Cardiac MRI",
-          "Preprint",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "f07efc8097a83c23",
-        "title": "A Multimodal Foundation Model to Enhance Generalizability and Data   Efficiency for Pan-cancer Prognosis Prediction",
-        "summary": "Multimodal data provides heterogeneous information for a holistic understanding of the tumor microenvironment. However, existing AI models often struggle to harness the rich information within multimodal data and extract poorly generalizable representations. Here we present MICE (Multimodal data Integration via Collaborative Experts), a multimodal foundation model that effectively integrates pathology images, clinical reports, and genomics data for precise pan-cancer prognosis prediction. Instead of conventional multi-expert modules, MICE employs multiple functionally diverse experts to compre",
-        "url": "http://arxiv.org/abs/2509.12600v1",
-        "cover": "http://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
-        "source": "arXiv",
-        "time": "2025-09-16",
-        "tags": [
-          "Genomics",
-          "Preprint",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "924fbf64f27ed33e",
-        "title": "DeepEyeNet: Generating Medical Report for Retinal Images",
-        "summary": "The increasing prevalence of retinal diseases poses a significant challenge to the healthcare system, as the demand for ophthalmologists surpasses the available workforce. This imbalance creates a bottleneck in diagnosis and treatment, potentially delaying critical care. Traditional methods of generating medical reports from retinal images rely on manual interpretation, which is time-consuming and prone to errors, further straining ophthalmologists' limited resources. This thesis investigates the potential of Artificial Intelligence (AI) to automate medical report generation for retinal images",
-        "url": "http://arxiv.org/abs/2509.12534v1",
-        "cover": "http://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
-        "source": "arXiv",
-        "time": "2025-09-16",
-        "tags": [
-          "Preprint"
-        ]
-      },
-      {
-        "id": "60af513547c89db6",
-        "title": "Oligodendrocyte-targeted adeno-associated virus gene therapy for Canavan disease in children: a phase 1/2 trial",
-        "summary": "Nature Medicine, Published online: 16 September 2025; doi:10.1038/s41591-025-03919-wInterim trial results of MYR-101, a novel recombinant vector with selective tropism for oligodendrocytes, support its tolerability and indicate improved myelination and reduced cerebrospinal fluid N-acetyl-aspartic acid concentrations in children with Canavan disease.",
-        "url": "https://www.nature.com/articles/s41591-025-03919-w",
-        "cover": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41591-025-03919-w/MediaObjects/41591_2025_3919_Fig1_HTML.png",
-        "source": "www.nature.com",
-        "time": "2025-09-16",
-        "tags": [
-          "Cardiac MRI",
-          "Clinical AI",
-          "Journal",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "5ae515250967840e",
-        "title": "Macrovascular and microvascular outcomes of metabolic surgery versus GLP-1 receptor agonists in patients with diabetes and obesity",
-        "summary": "Nature Medicine, Published online: 16 September 2025; doi:10.1038/s41591-025-03893-3In an observational study comparing individuals with type 2 diabetes and obesity who underwent metabolic surgery with similar individuals who received GLP-1 receptor agonist treatment, metabolic surgery was associated with a lower risk of macrovascular and microvascular outcomes, including major adverse cardiovascular events, nephropathy, retinopathy and all-cause mortality.",
-        "url": "https://www.nature.com/articles/s41591-025-03893-3",
-        "cover": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41591-025-03893-3/MediaObjects/41591_2025_3893_Fig1_HTML.png",
-        "source": "www.nature.com",
-        "time": "2025-09-16",
-        "tags": [
-          "Cardiac MRI",
-          "Journal"
-        ]
-      },
-      {
-        "id": "5e3d5d9223a6c3ee",
-        "title": "MedFact: Benchmarking the Fact-Checking Capabilities of Large Language   Models on Chinese Medical Texts",
-        "summary": "The increasing deployment of Large Language Models (LLMs) in healthcare necessitates a rigorous evaluation of their factual reliability. However, existing benchmarks are often limited by narrow domains of data, failing to capture the complexity of real-world medical information. To address this critical gap, we introduce MedFact, a new and challenging benchmark for Chinese medical fact-checking. MedFact comprises 2,116 expert-annotated instances curated from diverse real-world texts, spanning 13 medical specialties, 8 fine-grained error types, 4 writing styles, and multiple difficulty levels. ",
-        "url": "http://arxiv.org/abs/2509.12440v1",
-        "cover": "http://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
-        "source": "arXiv",
-        "time": "2025-09-15",
-        "tags": [
-          "Preprint",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "0ab854a9f925c4e5",
-        "title": "Advancing Medical Artificial Intelligence Using a Century of Cases",
-        "summary": "BACKGROUND: For over a century, the New England Journal of Medicine Clinicopathological Conferences (CPCs) have tested the reasoning of expert physicians and, recently, artificial intelligence (AI). However, prior AI evaluations have focused on final diagnoses without addressing the multifaceted reasoning and presentation skills required of expert discussants.   METHODS: Using 7102 CPCs (1923-2025) and 1021 Image Challenges (2006-2025), we conducted extensive physician annotation and automated processing to create CPC-Bench, a physician-validated benchmark spanning 10 text-based and multimodal",
-        "url": "http://arxiv.org/abs/2509.12194v1",
-        "cover": "http://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
-        "source": "arXiv",
-        "time": "2025-09-15",
-        "tags": [
-          "Cardiac MRI",
-          "Preprint",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "a8b4cc08e100a1e2",
-        "title": "Multi Anatomy X-Ray Foundation Model",
-        "summary": "X-ray imaging is a ubiquitous in radiology, yet most existing AI foundation models are limited to chest anatomy and fail to generalize across broader clinical tasks. In this work, we introduce XR-0, the multi-anatomy X-ray foundation model using self-supervised learning on a large, private dataset of 1.15 million images spanning diverse anatomical regions and evaluated across 12 datasets and 20 downstream tasks, including classification, retrieval, segmentation, localization, visual grounding, and report generation. XR-0 achieves state-of-the-art performance on most multi-anatomy tasks and rem",
-        "url": "http://arxiv.org/abs/2509.12146v1",
-        "cover": "http://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
-        "source": "arXiv",
-        "time": "2025-09-15",
-        "tags": [
-          "Cardiac MRI",
-          "Preprint",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "11de34dcdc9d87f5",
-        "title": "How to Evaluate Medical AI",
-        "summary": "The integration of artificial intelligence (AI) into medical diagnostic workflows requires robust and consistent evaluation methods to ensure reliability, clinical relevance, and the inherent variability in expert judgments. Traditional metrics like precision and recall often fail to account for the inherent variability in expert judgments, leading to inconsistent assessments of AI performance. Inter-rater agreement statistics like Cohen's Kappa are more reliable but they lack interpretability. We introduce Relative Precision and Recall of Algorithmic Diagnostics (RPAD and RRAD) - a new evalua",
-        "url": "http://arxiv.org/abs/2509.11941v1",
-        "cover": "http://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
-        "source": "arXiv",
-        "time": "2025-09-15",
-        "tags": [
-          "Preprint"
-        ]
-      },
-      {
-        "id": "086ae2130a36a862",
-        "title": "<b>Rethinking brain body maps and phantom limbs</b>",
-        "summary": "Nature Medicine, Published online: 15 September 2025; doi:10.1038/d41591-025-00057-1A study challenges previous assumptions that the brain’s body map undergoes reorganization after limb amputation, finding that it remains remarkably stable — with implications for brain–computer interfaces and the treatment of phantom limb pain.",
-        "url": "https://www.nature.com/articles/d41591-025-00057-1",
-        "cover": "https://media.nature.com/lw1200/magazine-assets/d41591-025-00057-1/d41591-025-00057-1_51447926.jpg",
-        "source": "www.nature.com",
-        "time": "2025-09-15",
-        "tags": [
-          "Cardiac MRI",
-          "Journal"
-        ]
-      },
-      {
-        "id": "f91988f48c2d4c48",
-        "title": "Primary care detection of Alzheimer’s disease using a self-administered digital cognitive test and blood biomarkers",
-        "summary": "Nature Medicine, Published online: 15 September 2025; doi:10.1038/s41591-025-03965-4A brief, self-administered digital cognitive test, in combination with a blood test, accurately detects clinical Alzheimer’s disease in primary care.",
-        "url": "https://www.nature.com/articles/s41591-025-03965-4",
-        "cover": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41591-025-03965-4/MediaObjects/41591_2025_3965_Fig1_HTML.png",
-        "source": "www.nature.com",
-        "time": "2025-09-15",
-        "tags": [
-          "Cardiac MRI",
-          "Journal",
-          "Radiology"
-        ]
-      },
-      {
-        "id": "c94cf1a5c1985cca",
-        "title": "The STARD-AI reporting guideline for diagnostic accuracy studies using artificial intelligence",
-        "summary": "Nature Medicine, Published online: 15 September 2025; doi:10.1038/s41591-025-03953-8The STARD-AI statement, which was developed through a multistage process involving over 240 international stakeholders, provides a minimum set of criteria that allows for comprehensive reporting of AI-centered diagnostic test accuracy studies.",
-        "url": "https://www.nature.com/articles/s41591-025-03953-8",
-        "cover": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41591-025-03953-8/MediaObjects/41591_2025_3953_Fig1_HTML.png",
-        "source": "www.nature.com",
-        "time": "2025-09-15",
-        "tags": [
-          "Cardiac MRI",
-          "Journal"
-        ]
-      },
-      {
-        "id": "44ed2b3d82fdd852",
-        "title": "Boosted mitochondria reverse cognitive impairment in mice",
-        "summary": "Nature Biotechnology, Published online: 15 September 2025; doi:10.1038/s41587-025-02823-5Boosted mitochondria reverse cognitive impairment in mice",
-        "url": "https://www.nature.com/articles/s41587-025-02823-5",
-        "cover": "https://www.nature.com/static/images/favicons/nature/apple-touch-icon-f39cb19454.png",
-        "source": "www.nature.com",
-        "time": "2025-09-15",
-        "tags": [
-          "Journal"
-        ]
-      },
-      {
-        "id": "56a5fdd9ad5ac32d",
-        "title": "US government slams mRNA vaccine research",
-        "summary": "Nature Biotechnology, Published online: 15 September 2025; doi:10.1038/s41587-025-02826-2US government slams mRNA vaccine research",
-        "url": "https://www.nature.com/articles/s41587-025-02826-2",
-        "cover": "https://www.nature.com/static/images/favicons/nature/apple-touch-icon-f39cb19454.png",
-        "source": "www.nature.com",
-        "time": "2025-09-15",
-        "tags": [
-          "Cardiac MRI",
-          "Journal"
-        ]
-      },
-      {
-        "id": "97c22d9525915754",
-        "title": "Biotech news from around the world",
-        "summary": "Nature Biotechnology, Published online: 15 September 2025; doi:10.1038/s41587-025-02817-3Biotech news from around the world",
-        "url": "https://www.nature.com/articles/s41587-025-02817-3",
-        "cover": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41587-025-02817-3/MediaObjects/41587_2025_2817_Figa_HTML.png",
-        "source": "www.nature.com",
-        "time": "2025-09-15",
-        "tags": [
-          "Journal"
-        ]
-      },
-      {
-        "id": "507af9ddab401d94",
-        "title": "MicroRNAs",
-        "summary": "Nature Biotechnology, Published online: 15 September 2025; doi:10.1038/s41587-025-02800-yRecent patents relating to pharmaceutical compositions and methods of treatment involving microRNAs.",
-        "url": "https://www.nature.com/articles/s41587-025-02800-y",
-        "cover": "https://www.nature.com/static/images/favicons/nature/apple-touch-icon-f39cb19454.png",
-        "source": "www.nature.com",
-        "time": "2025-09-15",
-        "tags": [
-          "Cardiac MRI",
-          "Journal"
-        ]
-      },
-      {
-        "id": "a8fae573a779f3dc",
-        "title": "Mining archaea for antibiotics",
-        "summary": "Nature Biotechnology, Published online: 15 September 2025; doi:10.1038/s41587-025-02824-4Mining archaea for antibiotics",
-        "url": "https://www.nature.com/articles/s41587-025-02824-4",
-        "cover": "https://www.nature.com/static/images/favicons/nature/apple-touch-icon-f39cb19454.png",
-        "source": "www.nature.com",
-        "time": "2025-09-15",
-        "tags": [
-          "Journal"
-        ]
-      },
-      {
-        "id": "8dd4140bf8107f15",
-        "title": "Forum: Bao and Rogers",
-        "summary": "Nature Biotechnology, Published online: 15 September 2025; doi:10.1038/s41587-025-02784-9Forum: Bao and Rogers",
-        "url": "https://www.nature.com/articles/s41587-025-02784-9",
-        "cover": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41587-025-02784-9/MediaObjects/41587_2025_2784_Figa_HTML.png",
-        "source": "www.nature.com",
-        "time": "2025-09-15",
-        "tags": [
-          "Journal"
-        ]
-      },
-      {
-        "id": "aac826408db9b33a",
-        "title": "FDA go-ahead for HPV immunotherapy",
-        "summary": "Nature Biotechnology, Published online: 15 September 2025; doi:10.1038/s41587-025-02827-1FDA go-ahead for HPV immunotherapy",
-        "url": "https://www.nature.com/articles/s41587-025-02827-1",
-        "cover": "https://www.nature.com/static/images/favicons/nature/apple-touch-icon-f39cb19454.png",
-        "source": "www.nature.com",
-        "time": "2025-09-15",
-        "tags": [
-          "Journal"
-        ]
-      },
-      {
-        "id": "30e18c5d454daefc",
-        "title": "AI designs de novo antibiotics",
-        "summary": "Nature Biotechnology, Published online: 15 September 2025; doi:10.1038/s41587-025-02822-6AI designs de novo antibiotics",
-        "url": "https://www.nature.com/articles/s41587-025-02822-6",
-        "cover": "https://www.nature.com/static/images/favicons/nature/apple-touch-icon-f39cb19454.png",
-        "source": "www.nature.com",
-        "time": "2025-09-15",
-        "tags": [
-          "Journal"
         ]
       }
     ],
     "microfluidics": [
       {
-        "id": "28efb4100a40e6b7",
-        "title": "Smart resonant micro-sensor and micro-actuator: high-performance, wide range bi-axial magnetic sensitive/ insensitive micro-device for multifunctional sensing applications",
-        "summary": "Microsystems & Nanoengineering, Published online: 17 September 2025; doi:10.1038/s41378-025-01041-ySmart resonant micro-sensor and micro-actuator: high-performance, wide range bi-axial magnetic sensitive/ insensitive micro-device for multifunctional sensing applications",
-        "url": "https://www.nature.com/articles/s41378-025-01041-y",
-        "cover": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41378-025-01041-y/MediaObjects/41378_2025_1041_Figa_HTML.png",
-        "source": "www.nature.com",
-        "time": "2025-09-17",
+        "id": "baeaf9c8d44f1309",
+        "title": "Laser-emission vibrational microscopy of microdroplet arrays for high-throughput screening of hyperlipidemia.",
+        "summary": "The mechanical properties of biological fluids serve as early indicators of disease, offering valuable insights into complex physiological and pathological processes. However, the existing technologies struggle to achieve high-throughput measurement, limiting their widespread applications in disease diagnosis. Here, we propose laser-emission vibrational microscopy of microdroplets for high-throughput measurement of the intrinsic mechanical properties of fluids. The microdroplet array supporting high Q-factor (10 4 ) whispering gallery modes (WGM) lasing was massively fabricated on a superhydrophobic surface with inkjet printing. Ultrasound was employed to actuate the mechanical vibrations of the microdroplets, and the vibration amplitude was quantified using time-resolved laser spectra. We…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962805/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Light, science & applications",
+        "time": "2025 Sep 1",
         "tags": [
-          "AST",
-          "Journal"
+          "Peer-reviewed",
+          "AST"
         ]
       },
       {
-        "id": "99a4c928f613b8af",
-        "title": "Electroosmotic hydraulic-based haptic reproduction of human pulse with high accuracy for remote diagnosis",
-        "summary": "Microsystems & Nanoengineering, Published online: 16 September 2025; doi:10.1038/s41378-025-01042-xElectroosmotic hydraulic-based haptic reproduction of human pulse with high accuracy for remote diagnosis",
-        "url": "https://www.nature.com/articles/s41378-025-01042-x",
-        "cover": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41378-025-01042-x/MediaObjects/41378_2025_1042_Figa_HTML.png",
-        "source": "www.nature.com",
-        "time": "2025-09-16",
+        "id": "2c8aa98314056415",
+        "title": "Channel-size enlarging strategy for liposome production scale-up: A simplified approach.",
+        "summary": "The clinical translation of liposome-based nanomedicines is limited by the lack of scalable production methods ensuring precise control over particle size and homogeneity. While microfluidics offers a promising single-step solution for manufacturing liposomes with desired attributes, limited throughput remains the main constraint for its industrial-scale integration. Here we present a versatile fluidic system utilizing simple and commercially available T-shaped mixers for scalable production of highly monodisperse liposomes, ranging from few mL/min to 30 L/h of Total Flow Rate (TFR). Firstly, to characterize the platform, the influence of TFR and diverse flow regimes on size and Polidispersity Index (PDI) of empty-Doxil® liposomes was investigated. Notably, particle homogeneity and reprodu…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962082/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "International journal of pharmaceutics",
+        "time": "2025 Sep 1",
         "tags": [
-          "AST",
-          "Journal"
+          "Peer-reviewed",
+          "AST"
         ]
       },
       {
-        "id": "db941ee06530b748",
-        "title": "Bioelectronic Interfaces and Sensors for Neural Organoids",
-        "summary": "Microsystems & Nanoengineering, Published online: 15 September 2025; doi:10.1038/s41378-025-01038-7Bioelectronic Interfaces and Sensors for Neural Organoids",
-        "url": "https://www.nature.com/articles/s41378-025-01038-7",
-        "cover": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41378-025-01038-7/MediaObjects/41378_2025_1038_Figa_HTML.png",
-        "source": "www.nature.com",
-        "time": "2025-09-15",
+        "id": "bc4a0c9d6d102c40",
+        "title": "A Novel Human Distal Tubuloid-on-a-Chip Model for Investigating Sodium and Water Transport Mechanisms.",
+        "summary": "Background: The distal nephron, which includes the thick ascending limb, distal convoluted tubule, connecting tubule, and collecting duct, is essential for the regulation of water and electrolyte balance. Injury or dysfunction of these segments contributes to significant kidney disease and systemic complications. Studying these regions directly in vivo is limited by the complexity of kidney architecture. Recently, three-dimensional cultures of human kidney tubule cells, called tubuloids, and microfluidic platforms that support dynamic flow have provided new opportunities to model kidney function in vitro. Methods: We developed a human distal tubuloid-on-a-chip model by integrating primary human tubuloid cells with the OrganoPlate® microfluidic culture system. Tubuloids were seeded to form…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40960877/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Kidney360",
+        "time": "2025 Sep 1",
         "tags": [
-          "AST",
-          "Journal"
+          "Peer-reviewed",
+          "AST"
+        ]
+      },
+      {
+        "id": "9c90fb19d0883a9c",
+        "title": "Modeling functional responses to pollutant exposure using modular hydrogel supported vascularized alveolosphere-on-a-chip.",
+        "summary": "Alveolar type 2 (AT2) cells play a pivotal role in maintaining lung homeostasis, and the generation of three-dimensional cultures, such as alveolospheres, provides a valuable model for studying lung development, pathologies, and drug responses. Here, we investigate the critical extracellular matrix (ECM) characteristics that influence AT2 alveolosphere formation and growth. By encapsulating AT2 cells in different extracellular matrix-based hydrogels, we identified laminin as a key ECM protein supporting robust alveolosphere formation akin to Matrigel. Our results show that laminin-rich hydrogels support alveolosphere formation across murine and human primary AT2 cells as well as induced human pluripotent stem cell derived AT2 cells (iAT2 cells). Notably, matrix stiffness strongly influence…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40960519/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Biomaterials science",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "AST"
+        ]
+      },
+      {
+        "id": "9113281780acfd21",
+        "title": "Disentangling the Roles of Dissolved Oxygen, Common Salts, and pH on Spontaneous Hydrogen Peroxide Production in Water: No O(2), No H(2)O(2).",
+        "summary": "Despite mounting evidence that the air-water interface or microdroplet geometry has no bearing on the spontaneous formation of hydrogen peroxide (H 2 O 2 ) down to a 50 nM limit of detection, the debate persists. Recent studies have demonstrated connections between the spontaneous formation of hydroxyl (HO • ) radicals and H 2 O 2 in sprayed microdroplets and the solution pH, dissolved salts, nebulizing gas, and gaseous environment. Among the halides, chloride (Cl - ), bromide (Br - ), and iodide (I - ), the studies found that Br - dominated H 2 O 2 formation because of its enhanced fractionation at the air-water interface and ability to donate electrons. The studies also suggested that H 2 O 2 production at the air-water interface scales with the alkalinity of water. In response, this rep…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40958079/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Journal of the American Chemical Society",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "AST"
+        ]
+      },
+      {
+        "id": "e8f09f55e6ce768a",
+        "title": "Microstructure-Enhanced Magnetic-Driven Soft Actuator with High Force and Large Deformation.",
+        "summary": "Magnetic soft actuators are promising for biomedical and soft robotic applications due to their biocompatibility and magnetic responsiveness. However, conventional designs face a trade-off between achieving high magnetic force and flexibility due to uniform particle distribution. Herein, we propose a novel microscale structure developed by a microscale structure-constrained fluidic formation technique, effectively addressing this limitation and allowing for controlled magnetic powder agglomeration. This approach yields actuators with a low elastic modulus (0.5 MPa) and high magnetic force (12 mN), synergistically combining flexibility and actuation. These performance characteristics significantly advance existing actuators that typically compromise one property for the other. The resulting…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40957725/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "ACS applied materials & interfaces",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "AST"
+        ]
+      },
+      {
+        "id": "379d81d283b5eafc",
+        "title": "A Microfluidics-Based Ultrahigh-Throughput Screening Unveils Diverse Ketoreductases Relevant to Pharmaceutical Synthesis.",
+        "summary": "Ketoreductases (KREDs) have become increasingly valuable biocatalysts due to their ability to produce chiral alcohols with high enantioselectivity. Prior to our work, Thai et al. developed an efficient and easy assay for their discovery, but the throughput was limited. Based on their work, we developed an ultrahigh-throughput screening assay to discover KREDs. First, we optimized Thai's assay by adapting it to a droplet format and increased its throughput by combining droplet microfluidics and fluorescence-activated cell sorting (FACS). Then, we demonstrated that our new assay was reliable and sensitive by successfully screening a library of 1.5 million clones. This allowed us to discover KREDs with low identity with known enzymes or with a previously undescribed substrate scope, which cou…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40957694/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Analytical chemistry",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "AST"
+        ]
+      },
+      {
+        "id": "c773872502ef500c",
+        "title": "Enhanced One-Pot Dual-CRISPR-Based Assay Lyophilized on a 3D-Printed Disc for Field-Deployable Multiplex Bacteria Detection.",
+        "summary": "One-pot CRISPR-based detection combining recombinase polymerase amplification (RPA) enables rapid and accurate nucleic acid testing but faces challenges in performance, multiplexing, and field-ready lyophilization. Here, an enhanced one-pot, helicase-assisted RPA (hRPA)-combined, dual-CRISPR/uAsCas12a (EOD-CRISPR) assay is described which can be lyophilized on a 3D-printed microfluidic disc to achieve field-deployable multiplex bacteria detection. In EOD-CRISPR reactions, the reaction speed, sensitivity, and fluorescence signal are significantly enhanced due to the synergistic effect of bovine serum albumin, hRPA, and uAsCas12a nuclease. The 3D-printed disc features four central chambers encircled by eight outer chambers, permitting detecting four targets simultaneously. For stable lyophil…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40956287/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "AST"
+        ]
+      },
+      {
+        "id": "b48c647a8a95db72",
+        "title": "Paper-Based Fast-Flow Electrochemical Device Enabling Self-Calibrated and High-Throughput NADPH Measurements.",
+        "summary": "Microfluidic paper-based electrochemical devices (μPEDs) are transforming cost-effective and portable diagnostics. However, conventional μPEDs are limited to a single use, as the removal of analyzed solutions is challenging, preventing repeatable measurements. This study introduces a paper-based fast-flow electrochemical device (PFED) design that overcomes this limitation, enabling multiple detections within a single device without requiring external power. Unlike traditional μPEDs, the PFED integrates a plastic hollow channel with a wax-printed channel, ensuring that fluid flow is not solely dependent on capillary action. This enhanced configuration accelerates liquid transport, facilitates rapid solution exchange, and significantly improves device repeatability. Additionally, the PFED, c…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40956240/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Analytical chemistry",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "AST"
+        ]
+      },
+      {
+        "id": "1e7932ef1d219acf",
+        "title": "High-Precision Refractive Index-Based Microparticle Sorting Using Airy Beams.",
+        "summary": "",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40956179/",
+        "cover": "",
+        "source": "Analytical chemistry",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "AST"
+        ]
+      },
+      {
+        "id": "8d71464b5c006928",
+        "title": "An Integrated Digital Microfluidic Platform with Titanium Dioxide Nanoparticles-Assisted Laser Desorption Ionization Mass Spectrometry for Microbial Analysis.",
+        "summary": "",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40955147/",
+        "cover": "",
+        "source": "Analytical chemistry",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "AST"
+        ]
+      },
+      {
+        "id": "447b4fd16d5da55c",
+        "title": "Bioinspired Magnetic Janus Core-Shell Micromotors for Delivery of Stem Cells and Vascular Endothelial Growth Factor in Bone Regeneration.",
+        "summary": "",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40954516/",
+        "cover": "",
+        "source": "Advanced healthcare materials",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "AST"
+        ]
+      },
+      {
+        "id": "db6cbc89a9084a8c",
+        "title": "Microsystem technologies for accelerating the discovery and translation of immunotherapies.",
+        "summary": "",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40954236/",
+        "cover": "",
+        "source": "Nature reviews. Drug discovery",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "AST"
+        ]
+      },
+      {
+        "id": "fa74d1809d2ce6bf",
+        "title": "Dual-View Transport of Intensity Phase Imaging-Based Flow Cytometry for Label-Free Cell Analysis and Classification.",
+        "summary": "",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40953910/",
+        "cover": "",
+        "source": "Journal of biophotonics",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "AST"
+        ]
+      },
+      {
+        "id": "69ba494c21b01938",
+        "title": "Magnetic molecularly imprinted inverse opal photonic microspheres for high-performance enrichment and analysis of ochratoxin A in cereals.",
+        "summary": "Ochratoxin A (OTA) is a mycotoxin and can threaten human health through the food chains. It is essential to develop an effective OTA analysis method to prevent the contaminated cereals from entering the food chain. Here, an analogue of OTA was selected as the template and 3-aminopropyltriethoxysilicane was used as the functional monomer, to prepare a magnetic molecularly imprinted nanoparticles, which were further mixed with polystyrene and SiO 2 nanoparticles to make magnetic molecularly imprinted inverse opal photonic crystal microspheres (MIP@MIPCMs) by a microfluidic self-assembly strategy. Infrared analysis, scanning electron microscope, transmission electron microscope, and metallographic microscopy techniques have been used to characterize MIP@MIPCMs and its control materials, demon…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40953524/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Food chemistry",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "AST"
+        ]
+      },
+      {
+        "id": "39feaa81acba538e",
+        "title": "Systematic Review on the Role of Microfluidic Platforms in Advancing Scalable and Precise Microbial Bioprocessing.",
+        "summary": "Microbial bioprocessing is a key technology for the production of a wide range of biomolecules, including proteins, enzymes, antibiotics, and other bioactive compounds. In recent years, there has been an increasing interest in using microfluidic platforms for bioprocessing, due to the ability to precisely control and manipulate fluids at the microscale. Microfluidics offers a transformative platform for the manufacturing of biomolecules intended for clinical applications by addressing key technical challenges in scalability, precision, reproducibility, and the ability to study complex biological systems. In this review, various methods used to fabricate microfluidic platforms and the current state-of-the-art in the synthesis/production of biopharmaceuticals, polymers, bioactive compounds,…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40951683/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Engineering in life sciences",
+        "time": "2025 Sep",
+        "tags": [
+          "Peer-reviewed",
+          "AST"
+        ]
+      },
+      {
+        "id": "7648649d3b01adfe",
+        "title": "Development of a Safe, Scalable, Course-Based Undergraduate Research Experience for Analytical Chemistry: The μCURE Project.",
+        "summary": "Course-based undergraduate research experiences (CUREs) can have many positive effects on students' learning and sense of self-efficacy. We have developed a networked CURE between four different institutions designed for courses in analytical chemistry that focuses on the process of adapting published solution-phase colorimetric assays into microfluidic paper analytical devices (μPAD) assays. We used a backward design process to develop 5 scaffolded learning outcomes: (1) identify and assess relevant literature sources, (2) propose a viable experimental plan to answer a well-defined scientific question based on literature information and experimental results, (3) apply appropriate methods of data analysis to interpret experimental results, (4) evaluate multiple pieces of experimental data…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40951365/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Journal of chemical education",
+        "time": "2025 Sep 9",
+        "tags": [
+          "Peer-reviewed",
+          "AST"
+        ]
+      },
+      {
+        "id": "565b1df235f6ab69",
+        "title": "Evaluating phage lytic activity: from plaque assays to single-cell technologies.",
+        "summary": "Bacteriophages are the most abundant biological entities on Earth, playing critical roles in microbial ecology, evolution, and horizontal gene transfer. Since the discovery of bacteriophages in the early 20th century, a wide range of techniques has been developed to study their lytic activity. This review provides a perspective on the wide range of methods for studying phage-bacteria interactions, spanning classical bulk-culture techniques and modern single-cell and high-throughput approaches. The first section covers solid culture methods relying on plaque formation phenomenon, which allow for quantification of infectious viruses, phage host-range establishment, and analysis of certain phage traits, now augmented by robotic high-throughput screening. The second section focuses on liquid c…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40950580/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Frontiers in microbiology",
+        "time": "2025",
+        "tags": [
+          "Peer-reviewed",
+          "AST"
+        ]
+      },
+      {
+        "id": "4caefe74b6717c51",
+        "title": "A physiological microfluidic blood-brain-barrier model for in vitro study of nanoparticle trafficking and accumulation.",
+        "summary": "Although the blood-brain barrier (BBB) restricts passage of most molecules, various naturally occurring and synthetic nanoparticles are nonetheless found within the brain parenchyma. To study the mechanisms underlying this phenomenon, we developed a microfluidic BBB model (mBBB) using human cerebral microvascular endothelial cells (HCMECs) in direct contact with primary human astrocytes and pericytes within a physiologically relevant extracellular matrix. The horizontal architecture enables high-resolution imaging across the full barrier interface and allows direct assessment of nanoparticle transport and accumulation. This in vitro platform recapitulates key features of the BBB, including selective permeability, junctional protein expression, and receptor-mediated uptake pathways. Using t…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40950131/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "bioRxiv : the preprint server for biology",
+        "time": "2025 Sep 3",
+        "tags": [
+          "Peer-reviewed",
+          "AST"
+        ]
+      },
+      {
+        "id": "a37f0b2134d836bd",
+        "title": "Capture, Confine, Characterize: High-Throughput Dielectrophoresis-Based Single-Cell Microfluidics Platform to Analyze Mammalian and Yeast Cells Using Raman Spectroscopy.",
+        "summary": "Single-cell analysis technologies are pivotal in unraveling complex biological mechanisms, yet existing platforms are often limited to sequencing-based end-point measurements, which fail to capture live cell dynamics. Here, we present a microfluidic- microelectronic device, the Microfluidic dielectrophoretic Arresting System (MiDAS) that employs dielectrophoresis (DEP) for high-throughput single-cell and droplet trapping in a compact array. We tested multiple trap geometries, including a 20 μm-diameter DEP trap for polymer microbeads, fungal and mammalian cells, and a 40 μm-diameter trap for water-in-oil droplets. The platform demonstrates broad sample compatibility, reliably immobilizing cells and beads of varying sizes. By integrating optical imaging and Raman spectroscopy, we enable rap…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40950121/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "bioRxiv : the preprint server for biology",
+        "time": "2025 Sep 3",
+        "tags": [
+          "Peer-reviewed",
+          "AST"
         ]
       }
     ],
     "bioinfo": [
       {
-        "id": "ec82e9d7a2efc99d",
-        "title": "Learning the cellular origins across cancers using single-cell chromatin landscapes.",
-        "summary": "Deciphering the pre-malignant cell of origin (COO) of different cancers is critical for understanding tumor development and improving diagnostic and therapeutic strategies in oncology. Prior work demonstrates that somatic mutations preferentially accumulate in closed chromatin regions of a cancer's COO. Leveraging this information, we combine 3,669 whole genome sequencing patient samples, 559 single-cell chromatin accessibility cellular profiles, and machine learning to predict the COO of 37 cancer subtypes with high robustness and accuracy, confirming both the known anatomical and cellular or",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40962882/",
+        "id": "81690eefc8f93be2",
+        "title": "A novel endophytic species, Streptomyces colwelliae sp. nov., isolated from root nodule of Alnus glutinosa.",
+        "summary": "Background: Streptomyces strains remain one of the most promising bacteria for novel drug discovery and are of general interest for pharmaceutical, biotechnological, and agricultural applications. They have been successfully used in agriculture to protect a number of crops, including wheat and rice, against fungal infections. Method and results: Streptomyces sp. Agncl-13 T was isolated from the surface sterilised root nodule of Alnus glutinosa, Newcastle upon Tyne, UK, and subjected to polyphasic taxonomic analysis and genome mining for plant growth promoting genes. Phenotypic, genetic and genomic data distinguished strain Agncl-13 T from Streptomyces species with validly published names. Whole cell hydrolysates of the strain were rich in LL-DAP. Strain Agncl-13 T had diphosphatidylglycero…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40963147/",
         "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "Nature communications",
-        "time": "2025-09-18",
+        "source": "BMC microbiology",
+        "time": "2025 Sep 1",
         "tags": [
           "Peer-reviewed",
           "Single-cell"
         ]
       },
       {
-        "id": "26d5d71aa94532df",
-        "title": "Identification and Taste Presentation Characteristics of Umami Peptides from Hybrid Pork Duroc × (Gaoligongshan × Saba) Based on Peptidomics, Machine Learning, Molecular Docking, and Molecular Dynamics Simulation.",
-        "summary": "The study identified novel umami peptides from hybrid pork Duroc × (Gaoligongshan × Saba) (DGS) and explored their interaction mechanisms with T1R1/T1R3. Liquid chromatography-tandem mass spectrometry (LC-MS/MS) characterized peptide profiles of DGS hot meat (DGSH) and chilled meat (DGSC), revealing a greater umami peptide potential in DGSC. Seven potential umami peptides were screened via bioinformatics and conformational relationship analysis. Sensory evaluation showed five novel peptides (VEGK, VESL, LEEK, LPEAL, and KRLMEDTED) had umami thresholds of 0.21-0.48 mg/mL. Electronic tongue anal",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40962296/",
+        "id": "14b413275c4febed",
+        "title": "Evaluating genome sequencing strategies: trio, singleton, and standard testing in rare disease diagnosis.",
+        "summary": "Background: Short-read genome sequencing (GS) is among the most comprehensive genetic testing methods available, capable of detecting single-nucleotide variants, copy-number variants, mitochondrial variants, repeat expansions, and structural variants in a single assay. Despite its technical advantages, the full clinical utility of GS in real-world diagnostic settings remains to be fully established. Methods: This study systematically compared singleton GS (sGS), trio GS (tGS), and exome sequencing-based standard-of-care (SoC) genetic testing in 416 patients with rare diseases in a blinded, prospective study. Three independent teams with divergent baseline expertise evaluated the diagnostic yield of GS as a unifying first-tier test and directly compared its variant detection capabilities, l…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40963120/",
         "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
-        "source": "Journal of agricultural and food chemistry",
-        "time": "2025-09-18",
+        "source": "Genome medicine",
+        "time": "2025 Sep 1",
         "tags": [
-          "Peer-reviewed"
+          "Peer-reviewed",
+          "Single-cell"
         ]
       },
       {
-        "id": "ccb439c15c5667ed",
-        "title": "The Adaptive Immune Receptor Repertoire Knowledge Commons: An invitation to the community",
-        "summary": "Sequencing data elucidating adaptive immune receptor (AIR) repertoires, genomic loci encoding AIR genes, and AIR antigens are hosted in siloed repositories, limiting integrative analyses. We are in the process of creating the AIR Repertoire Knowledge Commons (AKC) by merging data from community-backed repositories and applying knowledge-generation algorithms to integrate and enrich data and metadata.",
-        "url": "https://www.cell.com/cell-systems/fulltext/S2405-4712(25)00234-0?rss=yes",
-        "cover": "",
-        "source": "www.cell.com",
-        "time": "2025-09-17",
+        "id": "88d0a7ace53b7441",
+        "title": "Genome-wide association study meta-analysis uncovers novel genetic variants associated with olfactory dysfunction.",
+        "summary": "Background: Olfactory dysfunction is among the earliest signs of many age-related neurodegenerative diseases and has been associated with increased mortality in older adults; however, its genetic basis remains largely unknown. Therefore, here we aimed to elucidate its genetic architecture through a genome-wide association study meta-analysis (GWMA). Methods: This GWMA included the participants of European ancestry (N = 22,730) enrolled in four different large population-based studies followed by a multi-ancestry GWMA including participants of African ancestry (N = 1,030). Olfactory dysfunction was assessed using a 12-item smell identification test. Results: GWMA revealed a novel genome-wide significant locus (tagged by single nucleotide polymorphism rs11228623 at the 11q12 locus) associate…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40963118/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "BMC genomic data",
+        "time": "2025 Sep 1",
         "tags": [
-          "Journal"
+          "Peer-reviewed",
+          "Single-cell"
         ]
       },
       {
-        "id": "a25477884d99b7b6",
-        "title": "Synthetic coevolution reveals adaptive mutational trajectories of neutralizing antibodies and SARS-CoV-2",
-        "summary": "Understanding the ongoing coevolutionary battle between SARS-CoV-2 and the human immune system is critical for developing effective countermeasures. Ehling, Minot et al. establish a synthetic coevolution system that combines high-throughput screening with a fit-for-purpose protein language model to map the adaptive mutational trajectories of neutralizing antibodies and the viral receptor-binding domain. This system reveals antagonistic and compensatory mutations, identifies convergent escape mutations, and demonstrates how synthetic somatic hypermutation can rapidly evolve antibodies to overco",
-        "url": "https://www.cell.com/cell-systems/fulltext/S2405-4712(25)00224-8?rss=yes",
-        "cover": "",
-        "source": "www.cell.com",
-        "time": "2025-09-17",
+        "id": "06b5948f9f7bb5b8",
+        "title": "Influence of tick age and land-use on Borrelia burgdorferi s.l. in Ixodes ricinus ticks from the Swabian Alb, Germany.",
+        "summary": "Background: In Europe, Ixodes ricinus ticks transmit various zoonotic pathogens, including Borrelia burgdorferi sensu lato (s.l.), the causative agent of Lyme borreliosis (LB). However, the relationship between Borrelia prevalence, bacterial load in unfed nymphs of different physiological ages, and the influence of season and land-use remains poorly understood. The B. burgdorferi s.l. complex exhibits significant genetic diversity, with genospecies varying in distribution and pathogenicity. This study aimed to examine physiological tick age in relation to land-use, Borrelia infection rates, and genetic diversity. Furthermore, small and large mammal diversity as well as environmental factors such as shrub cover and tree species richness were incorporated in the analyses. Methods: Ticks were…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40963110/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Parasites & vectors",
+        "time": "2025 Sep 1",
         "tags": [
-          "Journal"
+          "Peer-reviewed",
+          "Single-cell"
+        ]
+      },
+      {
+        "id": "f7fcf339bd232931",
+        "title": "Predicting the structural impact of human alternative splicing.",
+        "summary": "Background: Protein structure prediction with neural networks is a powerful new method for linking protein sequence, structure, and function, but structures have generally been predicted for only a single isoform of each gene, neglecting splice variants. To investigate the structural implications of alternative splicing, we use AlphaFold2 to predict the structures of more than 11,000 human isoforms. We employ multiple metrics to identify splicing-induced structural alterations, including template matching score, secondary structure composition, surface charge distribution, radius of gyration, accessibility of post-translational modification sites, and structure-based function prediction. Results: We identify examples of how alternative splicing induces clear changes in each of these proper…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40963109/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Genome biology",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Single-cell"
+        ]
+      },
+      {
+        "id": "2faa70d0daf12ff9",
+        "title": "A comprehensive benchmarking of adaptive sampling tools for nanopore sequencing.",
+        "summary": "Background: Adaptive sampling is an emerging technology to enrich target reads while depleting unwanted reads during real-time nanopore sequencing. The application of different algorithms has spawned various tools for the determination of read rejection. However, an evaluation in conjunction with identifying the optimal enrichment performance for a specific task has yet to be conducted. Results: This study aimed to evaluate the performance of six widely used tools for nanopore adaptive sampling. Three distinct types of tasks were selected for testing, including the intraspecies enrichment of COSMIC genes, the interspecies enrichment of Saccharomyces cerevisiae, and the depletion of human host DNA. All the tools show increases in coverage depths of targets varying from 1.50- to 4.86-fold. T…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40963107/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Genome biology",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Single-cell"
+        ]
+      },
+      {
+        "id": "d5790366a901994b",
+        "title": "A hierarchical, count-based model highlights challenges in scATAC-seq data analysis and points to opportunities to extract finer-resolution information.",
+        "summary": "Background: Data from Single-cell Assay for Transposase Accessible Chromatin with Sequencing (scATAC-seq) is highly sparse. While current computational methods feature a range of transformation procedures to extract meaningful information, major challenges remain. Results: Here, we discuss the major scATAC-seq data analysis challenges such as sequencing depth normalization and region-specific biases. We present a hierarchical count model that is motivated by the data generating process of scATAC-seq data. Our simulations show that current scATAC-seq data, while clearly containing physical single-cell resolution, are too sparse to infer true informational-level single-cell, single-region of chromatin accessibility states. Conclusions: While the broad utility of scATAC-seq at a cell type lev…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40963104/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Genome biology",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Single-cell"
+        ]
+      },
+      {
+        "id": "f2596469e5d1b825",
+        "title": "Causal Transformer for Learning Embeddings from Structured Medical History Records and Multi-Source Data Integration for Complex Disease Risk Prediction.",
+        "summary": "Traditional disease risk prediction models predominantly rely on statistical algorithms and often focus on genetic factors or a limited set of lifestyle factors to estimate the risk of disease onset. Recently, more comprehensive approaches have emerged that integrate genetic factors with additional lifestyle factors (e.g., alcohol intake) and physical features (e.g., body mass index, age) to increase predictive accuracy. Since the onset of complex diseases is often accompanied by the occurrence of comorbidities, incorporating medical history records is a critical yet underexplored avenue for improving risk prediction. In this study, we propose a novel framework, MIDRP (Multi-source Integration for Disease Risk Prediction), which incorporates genetic variants, lifestyle factors, physical at…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40963070/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Interdisciplinary sciences, computational life sciences",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Single-cell"
+        ]
+      },
+      {
+        "id": "53e2f3dd9d4accaa",
+        "title": "Pathological complete response and survival outcomes in single hormone receptor-positive/HER2-negative breast cancer after neoadjuvant chemotherapy and its intrinsic biological features and immune landscape.",
+        "summary": "Background: Previous studies often combined double hormone receptor-positive (dHR +) and single HR-positive (sHR +) tumors, thus not accounting for the distinct characteristics of sHR + , particularly in the neoadjuvant setting. Moreover, adding immunotherapy to cytotoxic chemotherapy has shown encouraging efficacy in certain HR-positive early breast cancers. This study sought to assess pathological complete response (pCR) and survival outcomes in sHR + /HER2- breast cancer after neoadjuvant chemotherapy, while also investigating its specific biological traits and immune profile. Methods: Clinical data were sourced from the Cancer Hospital, Chinese Academy of Medical Sciences (CHCAMS, n = 1049), and the Surveillance, Epidemiology, and End Results (SEER, n = 21,092) database to examine neoa…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40963050/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Breast cancer research and treatment",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Single-cell"
+        ]
+      },
+      {
+        "id": "3a91db3129fba04a",
+        "title": "Learning the natural history of human disease with generative transformers.",
+        "summary": "Decision-making in healthcare relies on understanding patients' past and current health states to predict and, ultimately, change their future course 1-3 . Artificial intelligence (AI) methods promise to aid this task by learning patterns of disease progression from large corpora of health records 4,5 . However, their potential has not been fully investigated at scale. Here we modify the GPT 6 (generative pretrained transformer) architecture to model the progression and competing nature of human diseases. We train this model, Delphi-2M, on data from 0.4 million UK Biobank participants and validate it using external data from 1.9 million Danish individuals with no change in parameters. Delphi-2M predicts the rates of more than 1,000 diseases, conditional on each individual's past disease hi…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40963019/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Nature",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Single-cell"
+        ]
+      },
+      {
+        "id": "ba256eb4fbed43e5",
+        "title": "Rapid learning of neural circuitry from holographic ensemble stimulation enabled by model-based compressed sensing.",
+        "summary": "Discovering how computations are implemented in the brain at the level of monosynaptic connectivity requires probing for connections from potentially thousands of presynaptic candidate neurons. Two-photon optogenetics is a promising technology for mapping such connectivity via sequential stimulation of individual neurons while recording postsynaptic responses intracellularly. However, this technique is currently not scalable because stimulating neurons one by one requires prohibitively long experiments. Here we developed novel computational tools that, when combined, enable learning of monosynaptic connectivity from high-speed holographic ensemble stimulation. First, we developed a model-based compressed sensing algorithm that identifies connections from postsynaptic responses evoked by st…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962967/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Nature neuroscience",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Single-cell"
+        ]
+      },
+      {
+        "id": "243c3383e46e7a9e",
+        "title": "High-throughput synaptic connectivity mapping using in vivo two-photon holographic optogenetics and compressive sensing.",
+        "summary": "Characterizing synaptic connectivity in living neural circuits is key to understanding the interplay between network structure and function during behavior. However, the throughput of current in vivo synaptic mapping methods remains very limited. Here, we present a framework for increasing mapping throughput and speed that combines two-photon holographic optogenetic stimulation of presynaptic neurons, whole-cell recordings of postsynaptic responses and compressive sensing reconstruction of sparse connectivity. Under sequential single-cell stimulation, the method enables rapid probing of connectivity across up to 100 potential presynaptic cells within ~5 min in the visual cortex of anesthetized mice, identifying synaptic pairs along with their strength and spatial distribution. Furthermore,…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962966/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Nature neuroscience",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Single-cell"
+        ]
+      },
+      {
+        "id": "b967e77333e0a2bd",
+        "title": "Genome-wide association meta-analysis of childhood ADHD symptoms and diagnosis identifies new loci and potential effector genes.",
+        "summary": "We performed a genome-wide association meta-analysis (GWAMA) of 290,134 attention-deficit/hyperactivity disorder (ADHD) symptom measures of 70,953 unique individuals from multiple raters, ages and instruments (ADHD SYMP ). Next, we meta-analyzed the results with a study of ADHD diagnosis (ADHD OVERALL ). ADHD SYMP returned no genome-wide significant variants. We show that the combined ADHD OVERALL GWAMA identified 39 independent loci, of which 17 were new. Using a recently developed gene-mapping method, Fine-mapped Locus Assessment Model of Effector genes, we identified 22 potential ADHD effector genes implicating several new biological processes and pathways. Moderate negative genetic correlations (r g < -0.40) were observed with multiple cognitive traits. In three cohorts, polygenic scor…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962958/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Nature genetics",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Single-cell"
+        ]
+      },
+      {
+        "id": "fdde8671c9e24acb",
+        "title": "Metabolomic profiling and machine learning-based biomarker identification for oligoasthenozoospermia.",
+        "summary": "Introduction and objectives: Oligoasthenozoospermia, characterized by a low sperm count and impaired progressive motility, significantly contributes to male infertility. This study examines the metabolic disparities between individuals with oligoasthenozoospermia (n = 30) and healthy controls (n = 30) utilizing ultra-high-performance liquid chromatography-quadrupole time-of-flight mass spectrometry (UPLC-Q-TOF/MS). Methods: A total of 1,331 metabolites were identified in positive ion mode and 870 in negative ion mode, with differential analysis indicating 211 significantly different metabolites between the two groups. Pathway analysis identified key metabolic pathways, including the pentose phosphate pathway, TCA cycle, glycerophospholipid metabolism, and fatty acid metabolism. Subsequentl…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962908/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Metabolomics : Official journal of the Metabolomic Society",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Single-cell"
+        ]
+      },
+      {
+        "id": "ee82df93652fe11d",
+        "title": "Learning the cellular origins across cancers using single-cell chromatin landscapes.",
+        "summary": "Deciphering the pre-malignant cell of origin (COO) of different cancers is critical for understanding tumor development and improving diagnostic and therapeutic strategies in oncology. Prior work demonstrates that somatic mutations preferentially accumulate in closed chromatin regions of a cancer's COO. Leveraging this information, we combine 3,669 whole genome sequencing patient samples, 559 single-cell chromatin accessibility cellular profiles, and machine learning to predict the COO of 37 cancer subtypes with high robustness and accuracy, confirming both the known anatomical and cellular origins of numerous cancers, often at cell subset resolution. Importantly, our data-driven approach predicts a basal COO for most small cell lung cancers and a neuroendocrine COO for rare atypical cases…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962882/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Nature communications",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Single-cell"
+        ]
+      },
+      {
+        "id": "cffc1939953e6f52",
+        "title": "Immune landscape in liver of neonatal mice with phlebotomy-induced anemia.",
+        "summary": "Background: Severe anemia is a common comorbidity in preterm infants in the neonatal intensive care unit, which is caused by phlebotomy, low erythropoietin levels, low red blood cell (RBC) lifespan, and exacerbated by the underlying erythropoietic immaturity. Anemia causes tissue hypoxia, which may alter the hematopoiesis niche in the liver. This study utilized our preclinical mouse model of phlebotomy-induced anemia (PIA) to investigate the immune cell atlas in the liver. Methods: C57BL/6 mice were subjected to timed phlebotomy between postnatal days 2-10 to induce severe anemia. Immune cells in anemic liver were characterized by Single-cell (sc) RNA-sequencing and a flow cytometry approach. Results: The scRNA-seq analysis revealed that PIA is associated with an altered immune landscape o…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962864/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Pediatric research",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Single-cell"
+        ]
+      },
+      {
+        "id": "2135048b7dac09f5",
+        "title": "A software pipeline for medical information extraction with large language models, open source and suitable for oncology.",
+        "summary": "In medical oncology, text data, such as clinical letters or procedure reports, is stored in an unstructured way, making quantitative analysis difficult. Manual review or structured information retrieval is time-consuming and costly, whereas Large Language Models (LLMs) offer new possibilities in natural language processing for structured Information Extraction (IE) from medical free text. This protocol describes a workflow (LLM-AIx) for extracting predefined clinical entities from unstructured oncology text using privacy-preserving LLMs. It addresses a key barrier in clinical research and care by enabling efficient information extraction to support decision-making and large-scale data analysis. It runs on local hospital infrastructure, eliminating the need to transfer patient data external…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962856/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "NPJ precision oncology",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Single-cell"
+        ]
+      },
+      {
+        "id": "0cb7f34918a72e14",
+        "title": "Serum lipid levels and risk of lymphoid malignancies in the UK Biobank study.",
+        "summary": "Background: Abnormal circulating lipid levels have been suggested in relation to lymphoid malignancy (LM) risk. Methods: We studied UK Biobank participants (n = 403,625) with serum data for cholesterol (total [TC], high-density lipoprotein [HDL], direct low-density lipoprotein [LDL]), triglycerides (TG), and apolipoproteins A1 and B (ApoA1, ApoB). We conducted principal component (PC) analysis and multivariate Cox regression models to estimate hazard ratio (HR) overall, by lipid-lowering drug use and follow-up interval. Results: During an average of 10.5 years of follow-up, 3006 incident LMs occurred (including 667 multiple myelomas [MM], 2193 non-Hodgkin lymphomas [NHL]). Among medication non-users, most lipid levels were inversely associated with risk of most endpoints (HR Q4vsQ1 range:…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962848/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "British journal of cancer",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Single-cell"
+        ]
+      },
+      {
+        "id": "42048e9ba710f2ec",
+        "title": "Deciphering the central role of TMOD2 in colorectal cancer progression and metastasis.",
+        "summary": "Tropomodulin-2 (TMOD2) is upregulated in the nuclear compartment of highly liver metastatic colorectal cancer (CRC) cells. Its role in cancer and CRC progression is functionally undefined, despite its analysis in COAD and READ TCGA datasets revealing a correlation between high TMOD2 expression, advanced disease stages, and poorer survival in CRC patients. We aimed here to explore the role of TMOD2 in CRC and liver metastasis using functional proteomics, tumour samples, bioinformatics, and in vitro and in vivo CRC models. Stable overexpression and stable depletion of TMOD2 in isogenic CRC cells revealed its impact on tumorigenic and metastatic properties. TMOD2 overexpression enhanced cell adhesion, anchorage-independent growth, and migration, while stably TMOD2 depletion reduced them. In v…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962847/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "British journal of cancer",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Single-cell"
+        ]
+      },
+      {
+        "id": "4768f5b6643a7d37",
+        "title": "Dietary caffeine to assess CYP1A2 activity, tailor clozapine doses, and predict treatment response: genetic, epigenetic and clinical analyses.",
+        "summary": "Caffeine metabolic ratios (CMR) following monitored caffeine intake are the gold standard to probe cytochrome P450 (CYP) 1A2 activity, which metabolizes antipsychotics like clozapine and olanzapine. Given caffeine's ubiquity, we tested whether random CMR from dietary caffeine were associated with (1) clinical, genetic, and epigenetic factors linked to CYP1A2 activity; (2) plasma concentrations of clozapine and olanzapine; and (3) psychotropic treatment response. First, we analyzed two population-based studies (CoLaus|PsyCoLaus, N = 4898; SKIPOGH, N = 2054) to investigate random CMR associations with clinical, genome-wide, and epigenome-wide factors associated with CYP1A2 activity. Second, in psychiatric cohorts, we tested CMR associations with dose-normalized plasma concentrations (C/D) of…",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40962832/",
+        "cover": "https://cdn.ncbi.nlm.nih.gov/pubmed/persistent/pubmed-meta-image-v2.jpg",
+        "source": "Molecular psychiatry",
+        "time": "2025 Sep 1",
+        "tags": [
+          "Peer-reviewed",
+          "Single-cell"
+        ]
+      },
+      {
+        "id": "f9b6afcbd76d33c0",
+        "title": "AmpliconHunter: A Scalable Tool for PCR Amplicon Prediction from Microbiome Samples",
+        "summary": "Sequencing of PCR amplicons generated using degenerate primers (typically targeting a region of the 16S ribosomal gene) is widely used in metagenomics to profile the taxonomic composition of complex microbial samples. To reduce taxonomic biases in primer selection it is important to conduct in silico PCR analyses of the primers against large collections of up to millions of bacterial genomes. However, existing in silico PCR tools have impractical running time for analyses of this scale. In this paper we introduce AmpliconHunter, a highly scalable in silico PCR package distributed as open-source command-line tool and publicly available through a user-friendly web interface at https://ah1.engr.uconn.edu/. AmpliconHunter implements an accurate nearest-neighbor model for melting temperature ca…",
+        "url": "http://arxiv.org/abs/2509.13300v1",
+        "cover": "https://www.google.com/s2/favicons?sz=256&domain=arxiv.org",
+        "source": "arXiv",
+        "time": "2025-09-16",
+        "tags": [
+          "Preprint",
+          "Preprint"
+        ]
+      },
+      {
+        "id": "d67526a1ae64fa7e",
+        "title": "Uchimata: a toolkit for visualization of 3D genome structures on the web and in computational notebooks",
+        "summary": "Summary: Uchimata is a toolkit for visualization of 3D structures of genomes. It consists of two packages: a Javascript library facilitating the rendering of 3D models of genomes, and a Python widget for visualization in Jupyter Notebooks. Main features include an expressive way to specify visual encodings, and filtering of 3D genome structures based on genomic semantics and spatial aspects. Uchimata is designed to be highly integratable with biological tooling available in Python. Availability and Implementation: Uchimata is released under the MIT License. The Javascript library is available on NPM, while the widget is available as a Python package hosted on PyPI. The source code for both is available publicly on Github (https://github.com/hms-dbmi/uchimata and https://github.com/hms-dbmi…",
+        "url": "http://arxiv.org/abs/2509.13290v1",
+        "cover": "https://www.google.com/s2/favicons?sz=256&domain=arxiv.org",
+        "source": "arXiv",
+        "time": "2025-09-16",
+        "tags": [
+          "Preprint",
+          "Preprint"
+        ]
+      },
+      {
+        "id": "42616909e2635a41",
+        "title": "FOSSIL: Regret-minimizing weighting for robust learning under imbalance and small data",
+        "summary": "Imbalanced and small data regimes are pervasive in domains such as rare disease imaging, genomics, and disaster response, where labeled samples are scarce and naive augmentation often introduces artifacts. Existing solutions such as oversampling, focal loss, or meta-weighting address isolated aspects of this challenge but remain fragile or complex. We introduce FOSSIL (Flexible Optimization via Sample Sensitive Importance Learning), a unified weighting framework that seamlessly integrates class imbalance correction, difficulty-aware curricula, augmentation penalties, and warmup dynamics into a single interpretable formula. Unlike prior heuristics, the proposed framework provides regret-based theoretical guarantees and achieves consistent empirical gains over ERM, curriculum, and meta-weigh…",
+        "url": "http://arxiv.org/abs/2509.13218v1",
+        "cover": "https://www.google.com/s2/favicons?sz=256&domain=arxiv.org",
+        "source": "arXiv",
+        "time": "2025-09-16",
+        "tags": [
+          "Preprint",
+          "Preprint"
+        ]
+      },
+      {
+        "id": "6127e492c4fa6de3",
+        "title": "A Novel Recurrent Neural Network Framework for Prediction and Treatment of Oncogenic Mutation Progression",
+        "summary": "Despite significant medical advancements, cancer remains the second leading cause of death, with over 600,000 deaths per year in the US. One emerging field, pathway analysis, is promising but still relies on manually derived wet lab data, which is time-consuming to acquire. This work proposes an efficient, effective end-to-end framework for Artificial Intelligence (AI) based pathway analysis that predicts both cancer severity and mutation progression, thus recommending possible treatments. The proposed technique involves a novel combination of time-series machine learning models and pathway analysis. First, mutation sequences were isolated from The Cancer Genome Atlas (TCGA) Database. Then, a novel preprocessing algorithm was used to filter key mutations by mutation frequency. This data wa…",
+        "url": "http://arxiv.org/abs/2509.12732v1",
+        "cover": "https://www.google.com/s2/favicons?sz=256&domain=arxiv.org",
+        "source": "arXiv",
+        "time": "2025-09-16",
+        "tags": [
+          "Preprint",
+          "Preprint"
+        ]
+      },
+      {
+        "id": "a450be152c8cd558",
+        "title": "A Multimodal Foundation Model to Enhance Generalizability and Data Efficiency for Pan-cancer Prognosis Prediction",
+        "summary": "Multimodal data provides heterogeneous information for a holistic understanding of the tumor microenvironment. However, existing AI models often struggle to harness the rich information within multimodal data and extract poorly generalizable representations. Here we present MICE (Multimodal data Integration via Collaborative Experts), a multimodal foundation model that effectively integrates pathology images, clinical reports, and genomics data for precise pan-cancer prognosis prediction. Instead of conventional multi-expert modules, MICE employs multiple functionally diverse experts to comprehensively capture both cross-cancer and cancer-specific insights. Leveraging data from 11,799 patients across 30 cancer types, we enhanced MICE's generalizability by coupling contrastive and supervise…",
+        "url": "http://arxiv.org/abs/2509.12600v1",
+        "cover": "https://www.google.com/s2/favicons?sz=256&domain=arxiv.org",
+        "source": "arXiv",
+        "time": "2025-09-16",
+        "tags": [
+          "Preprint",
+          "Preprint"
+        ]
+      },
+      {
+        "id": "2df901128fc742f8",
+        "title": "MHASS: Microbiome HiFi Amplicon Sequencing Simulator",
+        "summary": "Summary: Microbiome HiFi Amplicon Sequence Simulator (MHASS) creates realistic synthetic PacBio HiFi amplicon sequencing datasets for microbiome studies, by integrating genome-aware abundance modeling, realistic dual-barcoding strategies, and empirically derived pass-number distributions from actual sequencing runs. MHASS generates datasets tailored for rigorous benchmarking and validation of long-read microbiome analysis workflows, including ASV clustering and taxonomic assignment. Availability and Implementation: Implemented in Python with automated dependency management, the source code for MHASS is freely available at https://github.com/rhowardstone/MHASS along with installation instructions. Contact: rye.howard-stone@uconn.edu or ion.mandoiu@uconn.edu Supplementary information: Supple…",
+        "url": "http://arxiv.org/abs/2509.12428v1",
+        "cover": "https://www.google.com/s2/favicons?sz=256&domain=arxiv.org",
+        "source": "arXiv",
+        "time": "2025-09-15",
+        "tags": [
+          "Preprint",
+          "Preprint"
         ]
       }
     ]
