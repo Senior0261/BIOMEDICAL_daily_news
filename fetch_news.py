@@ -7,6 +7,7 @@ import requests
 import feedparser
 from bs4 import BeautifulSoup
 from dateutil import tz
+from datetime import datetime, timedelta
 
 JST = tz.gettz("Asia/Tokyo")
 OUT_DIR = "public/data"
@@ -154,7 +155,7 @@ def fetch_pubmed(q, days=1, max_n=40):
     ids = esearch.get("esearchresult",{}).get("idlist",[])
     if not ids: return []
     efetch = requests.get(base+"efetch.fcgi", params={"db":"pubmed","id":",".join(ids),"retmode":"xml"}, timeout=20, headers=HEADERS).text
-    soup = BeautifulSoup(efetch, "xml")
+    soup = BeautifulSoup(efetch, "lxml-xml")
     out=[]
     for art in soup.find_all("PubmedArticle"):
         pmid = art.find("PMID").text if art.find("PMID") else ""
@@ -195,11 +196,21 @@ def tag_item(cat, item):
     return item
 
 def within_days(dt, days=3):
-    now = datetime.now(JST)
-    if isinstance(dt, str):
-        try: dt = datetime.fromisoformat(dt)
-        except: return True
-    return (now - dt) <= timedelta(days=days+1)
+    """
+    统一按“日期”比较，避免 offset-naive/aware 冲突。
+    支持传入 datetime 或 "YYYY-MM-DD" 字符串。
+    """
+    now_d = datetime.now(JST).date()
+    if isinstance(dt, datetime):
+        d = dt.date()
+    elif isinstance(dt, str):
+        try:
+            d = datetime.fromisoformat(dt).date()  # "YYYY-MM-DD" -> date
+        except Exception:
+            return True
+    else:
+        return True
+    return (now_d - d) <= timedelta(days=days+1)
 
 def to_markdown(payload):
     lines = [f"## {payload['date']} · 每日新闻（AI×生物医学｜微流控｜生物信息学）",""]
@@ -240,8 +251,14 @@ def main():
             deduped.append(tag_item(cat, it))
 
         def parse_time(s):
-            try: return datetime.fromisoformat(s)
-            except: return datetime.now(JST)
+            """把字符串安全转成带 JST 的 datetime（用于排序等场景）"""
+            try:
+                dt = datetime.fromisoformat(s)  # 可能是 naive
+            except Exception:
+                dt = datetime.now(JST)
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=JST)
+            return dt
         deduped = [x for x in deduped if within_days(parse_time(x["time"]), days=3)]
         deduped.sort(key=lambda x: x["time"], reverse=True)
         out["items"][cat] = deduped
