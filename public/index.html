@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>AI × 生物医学 · 微流控 · 生物信息学 —— 每日新闻（JST）</title>
   <meta name="color-scheme" content="light dark" />
-  <!-- 用内联 SVG 做 favicon，避免 404 -->
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%234c8bf5"/><text x="50%" y="58%" text-anchor="middle" font-family="Arial" font-size="40" fill="white">AI</text></svg>'>
   <style>
     :root{--bg:Canvas;--text:CanvasText;--muted:color-mix(in oklab,var(--text) 60%,transparent);--card:color-mix(in oklab,var(--bg) 85%,var(--text));--accent:#4c8bf5;--chip-bg:color-mix(in oklab,var(--accent) 12%,transparent);--chip-text:color-mix(in oklab,var(--accent) 80%,var(--text));--shadow:0 10px 30px color-mix(in oklab, black 20%, transparent);--radius:14px;--grid:minmax(260px,1fr);--maxw:1200px;}
@@ -26,7 +25,7 @@
     .tabs{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
     .tab{padding:8px 12px;border-radius:8px;border:1px solid color-mix(in oklab,var(--text) 12%,transparent);cursor:pointer;background:var(--bg)}
     .tab.active{background:color-mix(in oklab,var(--accent) 18%,var(--bg));border-color:color-mix(in oklab,var(--accent) 40%,transparent);color:var(--chip-text)}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,var(--grid));gap:18px;margin-top:16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,var(--grid));gap:18px;margin-top:12px}
     .card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);border:1px solid color-mix(in oklab,var(--text) 10%,transparent);display:flex;flex-direction:column}
     .thumb{width:100%;aspect-ratio:16/9;object-fit:cover;background:#ddd}
     .content{padding:14px 14px 8px}
@@ -37,8 +36,17 @@
     .desc{opacity:.9;font-size:14px}
     .foot{display:flex;align-items:center;justify-content:space-between;padding:10px 14px 14px;margin-top:auto}
     .src{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px}
+
+    /* 论文列表样式（无封面，更紧凑） */
+    .subhead{margin-top:16px;color:var(--muted);font-weight:700;font-size:14px;letter-spacing:.5px}
+    .grid.list{grid-template-columns:repeat(auto-fill,minmax(420px,1fr))}
+    .card.compact{flex-direction:row;gap:0}
+    .card.compact .content{padding:12px 14px}
+    .card.compact .title{font-size:16px;margin:0 0 4px}
+    .card.compact .foot{padding:10px 14px 12px}
+
     @media print{header,.controls,.tabs{display:none!important}.grid{grid-template-columns:1fr 1fr}.card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}}
-    .empty{border:2px dashed color-mix(in oklab,var(--text) 20%,transparent);padding:22px;border-radius:16px;color:var(--muted);display:grid;place-items:center;min-height:160px;text-align:center}
+    .empty{border:2px dashed color-mix(in oklab,var(--text) 20%,transparent);padding:22px;border-radius:16px;color:var(--muted);display:grid;place-items:center;min-height:160px;text-align:center;margin-top:12px}
   </style>
 </head>
 <body>
@@ -67,32 +75,50 @@
 </header>
 
 <main class="wrap">
+  <!-- AI -->
   <section class="section" id="ai_biomed">
     <h2>AI（生物医学） <span id="count-ai_biomed" style="color:#888;font-size:14px"></span></h2>
-    <div class="grid" id="grid-ai_biomed"></div>
-    <div class="empty" id="empty-ai_biomed" hidden>今天这个板块还没有内容。</div>
+    <div class="subhead">论文</div>
+    <div class="grid list" id="grid-ai_biomed-papers"></div>
+    <div class="empty" id="empty-ai_biomed-papers" hidden>今天这个板块暂无论文。</div>
+
+    <div class="subhead">新闻</div>
+    <div class="grid" id="grid-ai_biomed-news"></div>
+    <div class="empty" id="empty-ai_biomed-news" hidden>今天这个板块暂无新闻。</div>
   </section>
 
+  <!-- 微流控 -->
   <section class="section" id="microfluidics" style="display:none">
     <h2>微流控 <span id="count-microfluidics" style="color:#888;font-size:14px"></span></h2>
-    <div class="grid" id="grid-microfluidics"></div>
-    <div class="empty" id="empty-microfluidics" hidden>今天这个板块还没有内容。</div>
+    <div class="subhead">论文</div>
+    <div class="grid list" id="grid-microfluidics-papers"></div>
+    <div class="empty" id="empty-microfluidics-papers" hidden>今天这个板块暂无论文。</div>
+
+    <div class="subhead">新闻</div>
+    <div class="grid" id="grid-microfluidics-news"></div>
+    <div class="empty" id="empty-microfluidics-news" hidden>今天这个板块暂无新闻。</div>
   </section>
 
+  <!-- 生物信息学 -->
   <section class="section" id="bioinfo" style="display:none">
     <h2>生物信息学 <span id="count-bioinfo" style="color:#888;font-size:14px"></span></h2>
-    <div class="grid" id="grid-bioinfo"></div>
-    <div class="empty" id="empty-bioinfo" hidden>今天这个板块还没有内容。</div>
+    <div class="subhead">论文</div>
+    <div class="grid list" id="grid-bioinfo-papers"></div>
+    <div class="empty" id="empty-bioinfo-papers" hidden>今天这个板块暂无论文。</div>
+
+    <div class="subhead">新闻</div>
+    <div class="grid" id="grid-bioinfo-news"></div>
+    <div class="empty" id="empty-bioinfo-news" hidden>今天这个板块暂无新闻。</div>
   </section>
 </main>
 
 <footer>
   <div class="wrap" style="color:#777;font-size:13px">
-    说明：每条新闻均附来源链接和封面图（OpenGraph/Twitter 卡片自动抽取）。JST 自动识别当日；支持 URL 参数 <code>?date=YYYY-MM-DD</code> 查看历史。
+    说明：每条新闻均附来源链接和封面图（仅新闻显示封面）。JST 自动识别当日；支持 URL 参数 <code>?date=YYYY-MM-DD</code> 查看历史。
   </div>
 </footer>
 
-<!-- 关键：把 JS 抽成外链文件，并加版本号避免缓存 -->
-<script defer src="./app.js?v=2025-09-18-2"></script>
+<!-- 提升版本号避免缓存 -->
+<script defer src="./app.js?v=2025-09-18-3"></script>
 </body>
 </html>
