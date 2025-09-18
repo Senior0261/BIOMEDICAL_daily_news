@@ -139,13 +139,18 @@
     const time = fmtISO(it.time);
     const tags = (it.tags || []).map(t => `<span class="chip">${t}</span>`).join("");
     const host = (() => { try { return new URL(it.url).host; } catch { return ""; } })();
-    const cover = it.cover || `data:image/svg+xml;utf8,${encodeURIComponent(
-      `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 338'><rect width='100%' height='100%' fill='#ddd'/><text x='50%' y='50%' text-anchor='middle' fill='#777' font-size='18' font-family='system-ui'>No Cover</text></svg>`
-    )}`;
-
+    const cover = it.cover && it.cover.trim() ? it.cover.trim() :
+      "data:image/svg+xml;utf8," + encodeURIComponent(
+        `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 338'>
+           <rect width='100%' height='100%' fill='#ddd'/>
+           <text x='50%' y='50%' text-anchor='middle' fill='#777'
+                 font-size='18' font-family='system-ui'>No Cover</text>
+         </svg>`
+      );
+  
     return `
       <article class="card">
-        <img class="thumb" src="${cover}" alt="" onerror="this.src='data:image/svg+xml;utf8,${encodeURIComponent('<svg xmlns=\\'http://www.w3.org/2000/svg\\' viewBox=\\'0 0 600 338\\'><rect width=\\'100%\\' height=\\'100%\\' fill=\\'#ddd\\'/><text x=\\'50%\\' y=\\'50%\\' text-anchor=\\'middle\\' fill=\\'#777\\' font-size=\\'18\\' font-family=\\'system-ui\\'>No Cover</text></svg>')}'"/>
+        <img class="thumb" src="${cover}" alt="">
         <div class="content">
           <h3 class="title"><a href="${it.url}" target="_blank" rel="noopener">${it.title || ""}</a></h3>
           <div class="meta"><span>来源：${it.source || "未知"}</span>${time?`<span>· 发布：${time}</span>`:""}</div>
