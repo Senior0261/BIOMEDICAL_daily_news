@@ -6,7 +6,7 @@
 <title>AI × 生物医学 · 微流控 · 生物信息学 —— 每日新闻（JST）</title>
 <meta name="color-scheme" content="light dark" />
 <style>
-  :root{--bg:Canvas;--text:CanvasText;--muted:color-mix(in oklab,var(--text) 60%,transparent);--card:color-mix(in oklab,var(--bg) 85%,var(--text));--accent:#4c8bf5;--chip-bg:color-mix(in oklab,var(--accent) 12%,transparent);--chip-text:color-mix(in oklab,var(--accent) 80%,var(--text));--shadow:0 10px 30px color-mix(in oklab, black 20%, transparent);--radius:14px;--radius-sm:10px;--radius-xs:8px;--grid:minmax(260px,1fr);--maxw:1200px;}
+  :root{--bg:Canvas;--text:CanvasText;--muted:color-mix(in oklab,var(--text) 60%,transparent);--card:color-mix(in oklab,var(--bg) 85%,var(--text));--accent:#4c8bf5;--chip-bg:color-mix(in oklab,var(--accent) 12%,transparent);--chip-text:color-mix(in oklab,var(--accent) 80%,var(--text));--shadow:0 10px 30px color-mix(in oklab, black 20%, transparent);--radius:14px;--grid:minmax(260px,1fr);--maxw:1200px;}
   *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"PingFang SC","Noto Sans CJK SC","Noto Sans JP",sans-serif}
   a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
   header{position:sticky;top:0;z-index:10;backdrop-filter:blur(8px);background:color-mix(in oklab,var(--bg) 70%,transparent);border-bottom:1px solid color-mix(in oklab,var(--text) 10%,transparent)}
@@ -65,120 +65,181 @@
 </header>
 
 <main class="wrap">
-  <section class="section active" id="ai_biomed">
+  <section class="section" id="ai_biomed">
     <h2>AI（生物医学）</h2>
     <div class="grid" id="grid-ai_biomed"></div>
     <div class="empty" id="empty-ai_biomed" hidden>今天这个板块还没有内容。</div>
   </section>
-  <section class="section" id="microfluidics">
+  <section class="section" id="microfluidics" style="display:none">
     <h2>微流控</h2>
     <div class="grid" id="grid-microfluidics"></div>
     <div class="empty" id="empty-microfluidics" hidden>今天这个板块还没有内容。</div>
   </section>
-  <section class="section" id="bioinfo">
+  <section class="section" id="bioinfo" style="display:none">
     <h2>生物信息学</h2>
     <div class="grid" id="grid-bioinfo"></div>
     <div class="empty" id="empty-bioinfo" hidden>今天这个板块还没有内容。</div>
   </section>
 </main>
 
-<footer><div class="wrap" style="color:#777;font-size:13px">说明：每条新闻均附来源链接和封面图（OpenGraph/Twitter 卡片自动抽取）。JST 自动识别当日。</div></footer>
+<footer><div class="wrap" style="color:#777;font-size:13px">说明：每条新闻均附来源链接和封面图（OpenGraph/Twitter 卡片自动抽取）。JST 自动识别当日；支持 URL 参数 <code>?date=YYYY-MM-DD</code> 查看历史。</div></footer>
 
 <script>
-  const tz = "Asia/Tokyo";
-  function fmtDateISOToJP(d){
-    try{
-      const dt = new Date(d);
-      const opt = { timeZone: tz, year:"numeric", month:"2-digit", day:"2-digit", weekday:"short" };
-      const s = new Intl.DateTimeFormat("zh-CN", opt).format(dt);
-      return s.replace(/\//g, "-");
-    }catch{ return d }
-  }
-  function fmtTime(d){
-    if(!d) return "";
-    try{
-      const dt = new Date(d);
-      const opt = { timeZone: tz, year:"numeric", month:"2-digit", day:"2-digit" };
-      return new Intl.DateTimeFormat("zh-CN", opt).format(dt).replace(/\//g,"-");
-    }catch{ return d }
+  // ===== 基础：时区 & 工具 =====
+  const TZ = "Asia/Tokyo";
+
+  function getParam(name){
+    const u = new URL(location.href);
+    return u.searchParams.get(name);
   }
   function todayJST() {
     const now = new Date();
-    const opt = { timeZone: tz, year:"numeric", month:"2-digit", day:"2-digit" };
+    const opt = { timeZone: TZ, year:"numeric", month:"2-digit", day:"2-digit" };
     return new Intl.DateTimeFormat("en-CA", opt).format(now); // YYYY-MM-DD
   }
-  async function loadData(dateStr){
-    const tries = [dateStr];
-    const d = new Date(dateStr); d.setDate(d.getDate()-1);
-    tries.push(d.toISOString().slice(0,10));
-    for(const t of tries){
-      const url = `./data/${t}.json`;
-      try{
-        const r = await fetch(url, {cache:"no-store"});
-        if(r.ok) return await r.json();
-      }catch{}
-    }
-    return {date: dateStr, items:{ai_biomed:[], microfluidics:[], bioinfo:[]}};
+  function fmtDateISOToJP(d){
+    try{
+      const dt = new Date(d);
+      const opt = { timeZone: TZ, year:"numeric", month:"2-digit", day:"2-digit", weekday:"short" };
+      return new Intl.DateTimeFormat("zh-CN", opt).format(dt).replace(/\//g,"-");
+    }catch{ return d }
+  }
+  function fmtISO(d){
+    if(!d) return "";
+    try{
+      const dt = new Date(d);
+      const opt = { timeZone: TZ, year:"numeric", month:"2-digit", day:"2-digit" };
+      return new Intl.DateTimeFormat("zh-CN", opt).format(dt).replace(/\//g,"-");
+    }catch{ return d }
   }
 
-  let data = {date: "", items:{ai_biomed:[], microfluidics:[], bioinfo:[]}};
-  const state = {cat:"ai_biomed", q:""};
+  async function fetchJSON(url){
+    const r = await fetch(url, { cache: "no-store" });
+    if(!r.ok) throw new Error("not found");
+    return await r.json();
+  }
 
+  // ===== 数据状态 =====
+  let data = { date: "", items: { ai_biomed:[], microfluidics:[], bioinfo:[] } };
+  const state = { cat: "ai_biomed", q: "" };
+
+  // ===== 过滤 & 卡片渲染 =====
   function matchQuery(it, q){
     if(!q) return true;
-    const hay = [it.title, it.summary, it.source, ...(it.tags||[])].join(" ").toLowerCase();
+    const hay = [
+      it.title || "",
+      it.summary || "",
+      it.source || "",
+      ...(it.tags || [])
+    ].join(" ").toLowerCase();
     return hay.includes(q.toLowerCase());
   }
+
   function card(it){
-    const time = fmtTime(it.time);
-    const tags = (it.tags||[]).map(t=>`<span class="chip">${t}</span>`).join("");
+    const time = fmtISO(it.time);
+    const tags = (it.tags || []).map(t => `<span class="chip">${t}</span>`).join("");
+    const host = (() => { try { return new URL(it.url).host; } catch { return ""; } })();
+    const cover = it.cover || `data:image/svg+xml;utf8,${encodeURIComponent(
+      `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 338'><rect width='100%' height='100%' fill='#ddd'/><text x='50%' y='50%' text-anchor='middle' fill='#777' font-size='18' font-family='system-ui'>No Cover</text></svg>`
+    )}`;
+
     return `
       <article class="card">
-        <img class="thumb" src="${it.cover||''}" alt="" onerror="this.src='data:image/svg+xml;utf8,${encodeURIComponent('<svg xmlns=\\'http://www.w3.org/2000/svg\\' viewBox=\\'0 0 600 338\\'><rect width=\\'100%\\' height=\\'100%\\' fill=\\'#ddd\\'/><text x=\\'50%\\' y=\\'50%\\' text-anchor=\\'middle\\' fill=\\'#777\\' font-size=\\'18\\' font-family=\\'system-ui\\'>No Cover</text></svg>')}'"/>
+        <img class="thumb" src="${cover}" alt="" onerror="this.src='data:image/svg+xml;utf8,${encodeURIComponent('<svg xmlns=\\'http://www.w3.org/2000/svg\\' viewBox=\\'0 0 600 338\\'><rect width=\\'100%\\' height=\\'100%\\' fill=\\'#ddd\\'/><text x=\\'50%\\' y=\\'50%\\' text-anchor=\\'middle\\' fill=\\'#777\\' font-size=\\'18\\' font-family=\\'system-ui\\'>No Cover</text></svg>')}'"/>
         <div class="content">
-          <h3 class="title"><a href="${it.url}" target="_blank" rel="noopener">${it.title}</a></h3>
-          <div class="meta"><span>来源：${it.source||'未知'}</span>${time?`<span>· 发布：${time}</span>`:''}</div>
-          <p class="desc">${it.summary||''}</p>
+          <h3 class="title"><a href="${it.url}" target="_blank" rel="noopener">${it.title || ""}</a></h3>
+          <div class="meta"><span>来源：${it.source || "未知"}</span>${time?`<span>· 发布：${time}</span>`:""}</div>
+          <p class="desc">${it.summary || ""}</p>
           <div class="chips">${tags}</div>
         </div>
         <div class="foot">
-          <div class="src">外链：<a href="${it.url}" target="_blank" rel="noopener">${new URL(it.url).host}</a></div>
+          <div class="src">外链：${host ? `<a href="${it.url}" target="_blank" rel="noopener">${host}</a>` : ""}</div>
           <a class="btn" href="${it.url}" target="_blank" rel="noopener">前往阅读 ↗</a>
         </div>
-      </article>`;
+      </article>
+    `;
   }
+
+  function renderCategory(catKey){
+    const grid = document.getElementById(`grid-${catKey}`);
+    const empty = document.getElementById(`empty-${catKey}`);
+
+    // ✅ 关键修正：从 data.items.* 读取
+    const arrAll = (data.items && data.items[catKey]) ? data.items[catKey] : [];
+    const arr = arrAll.filter(it => matchQuery(it, state.q));
+
+    grid.innerHTML = arr.map(card).join("");
+    empty.hidden = arr.length > 0;
+  }
+
   function mount(){
-    document.getElementById("today").textContent = `今天（日本时区）：${fmtDateISOToJP(data.date)} · 共 ${
-      ["ai_biomed","microfluidics","bioinfo"].map(k=>data.items[k]?.length||0).reduce((a,b)=>a+b,0)
-    } 条`;
-    for(const cat of ["ai_biomed","microfluidics","bioinfo"]){
-      const grid = document.getElementById(`grid-${cat}`);
-      const empty = document.getElementById(`empty-${cat}`);
-      const arr = (data.items[cat]||[]).filter(it=>matchQuery(it, state.q));
-      grid.innerHTML = arr.map(card).join("");
-      empty.hidden = arr.length>0;
-    }
-    for(const t of document.querySelectorAll(".tab")){
-      t.classList.toggle("active", t.dataset.cat===state.cat);
-    }
-    document.getElementById("ai_biomed").parentElement.querySelectorAll(".section").forEach(sec=>{
-      sec.classList.toggle("section", true);
-      sec.style.display = (sec.id===state.cat)?"block":"none";
+    // 顶部计数
+    const counts = ["ai_biomed","microfluidics","bioinfo"].map(k => (data.items?.[k]?.length || 0));
+    const total = counts.reduce((a,b)=>a+b,0);
+    document.getElementById("today").textContent =
+      `今天（日本时区）：${fmtDateISOToJP(data.date)} · 共 ${total} 条`;
+
+    // 选项卡样式
+    document.querySelectorAll(".tab").forEach(t => {
+      t.classList.toggle("active", t.dataset.cat === state.cat);
     });
+
+    // 显示当前分类
+    ["ai_biomed","microfluidics","bioinfo"].forEach(cat => {
+      const sec = document.getElementById(cat);
+      sec.style.display = (cat === state.cat) ? "block" : "none";
+    });
+
+    // 渲染三个分类
+    renderCategory("ai_biomed");
+    renderCategory("microfluidics");
+    renderCategory("bioinfo");
   }
-  document.getElementById("q").addEventListener("input", e=>{ state.q=e.target.value.trim(); mount(); });
-  document.getElementById("printBtn").onclick = ()=>window.print();
-  document.getElementById("copyMD").onclick = async ()=>{
+
+  // ===== 事件绑定 =====
+  document.getElementById("q").addEventListener("input", e => {
+    state.q = e.target.value.trim();
+    mount();
+  });
+
+  document.getElementById("printBtn").onclick = () => window.print();
+
+  document.getElementById("copyMD").onclick = async () => {
     const url = `./data/${data.date}.md`;
-    try{ const r = await fetch(url,{cache:"no-store"}); if(r.ok){ const txt = await r.text(); await navigator.clipboard.writeText(txt); alert("已复制今日 Markdown 摘要"); return; } }catch{}
+    try {
+      const r = await fetch(url, { cache: "no-store" });
+      if(r.ok){
+        const txt = await r.text();
+        await navigator.clipboard.writeText(txt);
+        alert("已复制今日 Markdown 摘要");
+        return;
+      }
+    } catch {}
     alert("未找到今日 Markdown 文件");
   };
-  for(const t of document.querySelectorAll(".tab")){
-    t.addEventListener("click", ()=>{ state.cat=t.dataset.cat; mount(); });
-  }
-  (async ()=>{
-    const dateStr = todayJST();
-    data = await loadData(dateStr);
+
+  document.querySelectorAll(".tab").forEach(t => {
+    t.addEventListener("click", () => {
+      state.cat = t.dataset.cat;
+      mount();
+    });
+  });
+
+  // ===== 启动：加载今日或 URL 指定日期的数据 =====
+  (async () => {
+    const d = getParam("date") || todayJST();
+    try {
+      data = await fetchJSON(`./data/${d}.json`);
+    } catch (e) {
+      // 若当天没有，回退昨天
+      const dt = new Date(d);
+      dt.setDate(dt.getDate() - 1);
+      try {
+        data = await fetchJSON(`./data/${dt.toISOString().slice(0,10)}.json`);
+      } catch {
+        data = { date: d, items: { ai_biomed:[], microfluidics:[], bioinfo:[] } };
+      }
+    }
     mount();
   })();
 </script>
