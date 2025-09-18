@@ -1,95 +1,109 @@
-// ====== 版本日志 ======
-console.log("app.js loaded ✅ v2025-09-18-2");
+console.log("app.js loaded ✅ v2025-09-18-3");
 
-// ====== 工具 & 时区 ======
 const TZ = "Asia/Tokyo";
 
-function getParam(name){
-  const u = new URL(location.href);
-  return u.searchParams.get(name);
-}
-function todayJST() {
-  const now = new Date();
-  const opt = { timeZone: TZ, year:"numeric", month:"2-digit", day:"2-digit" };
-  return new Intl.DateTimeFormat("en-CA", opt).format(now); // YYYY-MM-DD
+function getParam(name){ return new URL(location.href).searchParams.get(name); }
+function todayJST(){
+  return new Intl.DateTimeFormat("en-CA",{timeZone:TZ,year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
 }
 function fmtDateISOToJP(d){
   try{
-    const dt = new Date(d);
-    const opt = { timeZone: TZ, year:"numeric", month:"2-digit", day:"2-digit", weekday:"short" };
-    return new Intl.DateTimeFormat("zh-CN", opt).format(dt).replace(/\//g,"-");
+    return new Intl.DateTimeFormat("zh-CN",{timeZone:TZ,year:"numeric",month:"2-digit",day:"2-digit",weekday:"short"}).format(new Date(d)).replace(/\//g,"-");
   }catch{ return d }
 }
 function fmtISO(d){
   if(!d) return "";
   try{
-    const dt = new Date(d);
-    const opt = { timeZone: TZ, year:"numeric", month:"2-digit", day:"2-digit" };
-    return new Intl.DateTimeFormat("zh-CN", opt).format(dt).replace(/\//g,"-");
+    return new Intl.DateTimeFormat("zh-CN",{timeZone:TZ,year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date(d)).replace(/\//g,"-");
   }catch{ return d }
 }
 async function fetchJSON(url){
-  const bust = (url.includes("?") ? "&" : "?") + "t=" + Date.now();
-  const r = await fetch(url + bust, { cache: "no-store" });
-  if(!r.ok) throw new Error("not found: " + url);
+  const r = await fetch(url + (url.includes("?")?"&":"?") + "t=" + Date.now(), { cache:"no-store" });
+  if(!r.ok) throw new Error("not found: "+url);
   return await r.json();
 }
 
-// ====== 全局数据状态 ======
-let data = { date: "", items: { ai_biomed:[], microfluidics:[], bioinfo:[] } };
-const state = { cat: "ai_biomed", q: "" };
+// 全局数据
+let data = { date:"", items:{ ai_biomed:[], microfluidics:[], bioinfo:[] } };
+const state = { cat:"ai_biomed", q:"" };
 
-// ====== 过滤 & 渲染 ======
+// 论文/新闻判定（基于 tags）
+function isPaper(it){
+  const tags = (it.tags || []).map(s => s.toLowerCase());
+  return tags.includes("peer-reviewed") || tags.includes("preprint") || tags.includes("journal");
+}
+
+// 搜索过滤
 function matchQuery(it, q){
   if(!q) return true;
-  const hay = [
-    it.title || "",
-    it.summary || "",
-    it.source || "",
-    ...(it.tags || [])
-  ].join(" ").toLowerCase();
+  const hay = [it.title||"", it.summary||"", it.source||"", ...(it.tags||[])].join(" ").toLowerCase();
   return hay.includes(q.toLowerCase());
 }
 
-function card(it){
+// —— 卡片渲染：新闻（含封面）
+function cardNews(it){
   const time = fmtISO(it.time);
-  const tags = (it.tags || []).map(t => `<span class="chip">${t}</span>`).join("");
-  const host = (() => { try { return new URL(it.url).host; } catch { return ""; } })();
+  const tags = (it.tags||[]).map(t=>`<span class="chip">${t}</span>`).join("");
+  const host = (()=>{ try{ return new URL(it.url).host; }catch{ return ""; } })();
   const cover = (it.cover && it.cover.trim())
     ? it.cover.trim()
-    : "data:image/svg+xml;utf8," + encodeURIComponent(
-        `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 338'>
-           <rect width='100%' height='100%' fill='#ddd'/>
-           <text x='50%' y='50%' text-anchor='middle' fill='#777'
-                 font-size='18' font-family='system-ui'>No Cover</text>
-         </svg>`
-      );
+    : (host ? `https://www.google.com/s2/favicons?sz=256&domain=${host}` : "");
 
   return `
     <article class="card">
-      <img class="thumb" src="${cover}" alt="">
+      ${cover ? `<img class="thumb" src="${cover}" alt="">` : ``}
       <div class="content">
-        <h3 class="title"><a href="${it.url}" target="_blank" rel="noopener">${it.title || ""}</a></h3>
-        <div class="meta"><span>来源：${it.source || "未知"}</span>${time?`<span>· 发布：${time}</span>`:""}</div>
-        <p class="desc">${it.summary || ""}</p>
+        <h3 class="title"><a href="${it.url}" target="_blank" rel="noopener">${it.title||""}</a></h3>
+        <div class="meta"><span>来源：${it.source||"未知"}</span>${time?`<span>· 发布：${time}</span>`:""}</div>
+        <p class="desc">${it.summary||""}</p>
         <div class="chips">${tags}</div>
       </div>
       <div class="foot">
-        <div class="src">外链：${host ? `<a href="${it.url}" target="_blank" rel="noopener">${host}</a>` : ""}</div>
+        <div class="src">外链：${host?`<a href="${it.url}" target="_blank" rel="noopener">${host}</a>`:""}</div>
         <a class="btn" href="${it.url}" target="_blank" rel="noopener">前往阅读 ↗</a>
       </div>
     </article>
   `;
 }
 
-function renderCategory(catKey){
-  const grid = document.getElementById(`grid-${catKey}`);
-  const empty = document.getElementById(`empty-${catKey}`);
-  const arrAll = (data.items && data.items[catKey]) ? data.items[catKey] : [];
-  const arr = arrAll.filter(it => matchQuery(it, state.q));
+// —— 卡片渲染：论文（无封面，紧凑）
+function cardPaper(it){
+  const time = fmtISO(it.time);
+  const tags = (it.tags||[]).map(t=>`<span class="chip">${t}</span>`).join("");
+  const host = (()=>{ try{ return new URL(it.url).host; }catch{ return ""; } })();
+  return `
+    <article class="card compact">
+      <div class="content">
+        <h3 class="title"><a href="${it.url}" target="_blank" rel="noopener">${it.title||""}</a></h3>
+        <div class="meta"><span>来源：${it.source||"未知"}</span>${time?`<span>· 发布：${time}</span>`:""}</div>
+        <div class="chips">${tags}</div>
+        <p class="desc">${it.summary||""}</p>
+      </div>
+      <div class="foot">
+        <div class="src">外链：${host?`<a href="${it.url}" target="_blank" rel="noopener">${host}</a>`:""}</div>
+        <a class="btn" href="${it.url}" target="_blank" rel="noopener">查看论文 ↗</a>
+      </div>
+    </article>
+  `;
+}
 
-  grid.innerHTML = arr.map(card).join("");
-  empty.hidden = arr.length > 0;
+function renderSplit(catKey){
+  const all = (data.items && data.items[catKey]) ? data.items[catKey] : [];
+  const filtered = all.filter(it => matchQuery(it, state.q));
+  const papers = filtered.filter(isPaper);
+  const news   = filtered.filter(it => !isPaper(it));
+
+  // 容器
+  const gPapers = document.getElementById(`grid-${catKey}-papers`);
+  const gNews   = document.getElementById(`grid-${catKey}-news`);
+  const ePapers = document.getElementById(`empty-${catKey}-papers`);
+  const eNews   = document.getElementById(`empty-${catKey}-news`);
+
+  if (gPapers) gPapers.innerHTML = papers.map(cardPaper).join("");
+  if (gNews)   gNews.innerHTML   = news.map(cardNews).join("");
+
+  if (ePapers) ePapers.hidden = papers.length > 0;
+  if (eNews)   eNews.hidden   = news.length > 0;
 }
 
 function mount(){
@@ -97,11 +111,9 @@ function mount(){
   const counts = ["ai_biomed","microfluidics","bioinfo"].map(k => (data.items?.[k]?.length || 0));
   const total = counts.reduce((a,b)=>a+b,0);
   const todayEl = document.getElementById("today");
-  if (todayEl) {
-    todayEl.textContent = `今天（日本时区）：${fmtDateISOToJP(data.date)} · 共 ${total} 条`;
-  }
+  if (todayEl) todayEl.textContent = `今天（日本时区）：${fmtDateISOToJP(data.date)} · 共 ${total} 条`;
 
-  // 显示计数
+  // 每类计数
   const c1 = document.getElementById("count-ai_biomed");
   const c2 = document.getElementById("count-microfluidics");
   const c3 = document.getElementById("count-bioinfo");
@@ -109,21 +121,19 @@ function mount(){
   if (c2) c2.textContent = `· ${data.items.microfluidics.length} 条`;
   if (c3) c3.textContent = `· ${data.items.bioinfo.length} 条`;
 
-  // 选项卡样式
+  // 选项卡样式 & 显示切换
   document.querySelectorAll(".tab").forEach(t => {
     t.classList.toggle("active", t.dataset.cat === state.cat);
   });
-
-  // 切换显示
   ["ai_biomed","microfluidics","bioinfo"].forEach(cat => {
     const sec = document.getElementById(cat);
     if (sec) sec.style.display = (cat === state.cat) ? "block" : "none";
   });
 
-  // 渲染
-  renderCategory("ai_biomed");
-  renderCategory("microfluidics");
-  renderCategory("bioinfo");
+  // 渲染分区
+  renderSplit("ai_biomed");
+  renderSplit("microfluidics");
+  renderSplit("bioinfo");
 
   console.log("mount() done ✔", {
     ai: data.items.ai_biomed.length,
@@ -132,56 +142,43 @@ function mount(){
   });
 }
 
-// ====== 事件绑定 ======
+// 事件
 function bindEvents(){
   const q = document.getElementById("q");
-  if (q) q.addEventListener("input", e => {
-    state.q = e.target.value.trim();
-    mount();
-  });
+  if (q) q.addEventListener("input", e => { state.q = e.target.value.trim(); mount(); });
   const p = document.getElementById("printBtn");
   if (p) p.onclick = () => window.print();
-
   const c = document.getElementById("copyMD");
   if (c) c.onclick = async () => {
     const url = `./data/${data.date}.md`;
     try {
       const r = await fetch(url, { cache: "no-store" });
-      if(r.ok){
-        const txt = await r.text();
-        await navigator.clipboard.writeText(txt);
-        alert("已复制今日 Markdown 摘要");
-        return;
-      }
+      if(r.ok){ const txt = await r.text(); await navigator.clipboard.writeText(txt); alert("已复制今日 Markdown 摘要"); return; }
     } catch {}
     alert("未找到今日 Markdown 文件");
   };
-
   document.querySelectorAll(".tab").forEach(t => {
     t.addEventListener("click", () => { state.cat = t.dataset.cat; mount(); });
   });
 }
 
-// ====== 启动流程 ======
+// 启动
 async function boot(){
   try{
     const d = getParam("date") || todayJST();
     try {
       data = await fetchJSON(`./data/${d}.json`);
     } catch {
-      // 当天没有，退一天
-      const dt = new Date(d); dt.setDate(dt.getDate() - 1);
+      const dt = new Date(d); dt.setDate(dt.getDate()-1);
       data = await fetchJSON(`./data/${dt.toISOString().slice(0,10)}.json`);
     }
     bindEvents();
     mount();
   } catch (e){
     console.error("启动失败：", e);
-    // 渲染空状态
     bindEvents();
     mount();
   }
 }
 
-// defer 脚本：DOM 解析后执行
 boot();
